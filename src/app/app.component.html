@@ -1,3 +1,16 @@
-<h1>
-  {{title}}
-</h1>
+<button (click)="showServiceDropDown()">Use service</button>
+<button (click)="showDirectiveDropDown()">Use directive</button>
+
+<div *ngIf="serviceDropDownIsShown">
+  Now we use service
+  <div *ngFor="let dropDown of manyDropDowns">
+    <app-drop-down-service></app-drop-down-service>
+  </div>
+</div>
+
+<div *ngIf="directiveDropDownIsShown">
+  Now we use directive
+  <div *ngFor="let dropDown of manyDropDowns">
+    <app-drop-down-directive></app-drop-down-directive>
+  </div>
+</div>
