@@ -1,0 +1,13 @@
+.container {
+  padding: 15px 0;
+}
+
+.attention {
+  color: red;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.number-input {
+  width: 50px;
+}

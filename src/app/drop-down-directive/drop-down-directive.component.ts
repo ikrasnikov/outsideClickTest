@@ -24,13 +24,12 @@ export class DropDownDirectiveComponent {
     this._showContent();
   }
 
+
   private _showContent(): void {
     this.isShown = true;
   }
 
   public hideContent(): void {
-    this._startCloseTime = performance.now();
     this.isShown = false;
-    this._stopCloseTime = performance.now();
   }
 }

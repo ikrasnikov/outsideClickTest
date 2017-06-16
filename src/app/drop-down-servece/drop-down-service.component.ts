@@ -38,7 +38,6 @@ export class DropDownServiceComponent {
   }
 
   private _hideContent(): void {
-    console.log('I want to close');
     this.isShown = false;
     this._documentClickSubscription.unsubscribe();
   }

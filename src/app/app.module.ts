@@ -9,13 +9,15 @@ import { AppComponent } from './app.component';
 import { DropDownServiceComponent } from './drop-down-servece/drop-down-service.component';
 import { OutsideClickService } from './outside-click.service';
 import { DropDownDirectiveComponent } from './drop-down-directive/drop-down-directive.component';
+import { DropDownEventListenerComponent } from './drop-down-event-listener/drop-down-event-listener';
 
 @NgModule({
   declarations: [
     AppComponent,
     DropDownServiceComponent,
     DropDownDirectiveComponent,
-    ClickOutsideDirective
+    ClickOutsideDirective,
+    DropDownEventListenerComponent
   ],
   imports: [
     BrowserModule,
