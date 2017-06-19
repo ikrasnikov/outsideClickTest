@@ -10,10 +10,6 @@ export class DropDownDirectiveComponent {
   public isShown = false;
 
 
-  private _startCloseTime;
-  private _stopCloseTime;
-
-
   public toggleContent(): void {
     if (this.isShown) {
       this.hideContent();

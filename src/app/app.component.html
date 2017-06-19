@@ -9,7 +9,7 @@
          max="9999"
          step="1"
          (input)="updateDropDownsQuantity($event.target.value)"
-         value="1">
+         [value]="dropDownsQuantity">
 
 </div>
 
@@ -27,31 +27,6 @@
 
 </div>
 
-<div class="container">
-
-  <span>
-    Simulate click on
-  </span>
-  <input type="number"
-         class="number-input"
-         min="0"
-         max="9999"
-         step="1"
-         value="1"
-         (input)="checkEnding($event.target.value)">
-  <span>
-    {{numberEnding}} DropDown toggle
-  </span>
-  <button
-          (click)="simulateClickOnToggle()">
-    Click
-  </button>
-  <span>
-    Toggle DropDown was working for {{lostTime}} seconds
-  </span>
-
-</div>
-
 <div *ngIf="serviceDropDownIsShown">
   <h2>
     Now we use
@@ -59,9 +34,8 @@
     service
   </span>
   </h2>
-  <div *ngFor="let dropDown of manyDropDowns">
-    <app-drop-down-service></app-drop-down-service>
-  </div>
+  <app-drop-down-service *ngFor="let dropDown of manyDropDowns">
+  </app-drop-down-service>
 </div>
 
 <div *ngIf="eventListenerDropDownIsShown">
@@ -71,9 +45,8 @@
     event listener
   </span>
   </h2>
-  <div *ngFor="let dropDown of manyDropDowns">
-    <app-drop-down-event-listener></app-drop-down-event-listener>
-  </div>
+  <app-drop-down-event-listener *ngFor="let dropDown of manyDropDowns">
+  </app-drop-down-event-listener>
 </div>
 
 <div *ngIf="directiveDropDownIsShown">
@@ -83,7 +56,6 @@
     directive
   </span>
   </h2>
-  <div *ngFor="let dropDown of manyDropDowns">
-    <app-drop-down-directive></app-drop-down-directive>
-  </div>
+  <app-drop-down-directive *ngFor="let dropDown of manyDropDowns">
+  </app-drop-down-directive>
 </div>

@@ -9,13 +9,13 @@ import { OutsideClickService} from '../outside-click.service';
 })
 export class DropDownServiceComponent {
 
-  public isShown = false;
+  public isShown;
 
 
   @ViewChild('toggle')
-  private _toggle: ElementRef;
+  public toggle: ElementRef;
 
-  private _documentClickSubscription: Subscription;
+  public documentClickSubscription: Subscription;
 
 
   constructor(
@@ -28,7 +28,6 @@ export class DropDownServiceComponent {
 
       return;
     }
-
     this._showContent();
   }
 
@@ -39,13 +38,13 @@ export class DropDownServiceComponent {
 
   private _hideContent(): void {
     this.isShown = false;
-    this._documentClickSubscription.unsubscribe();
+    this.documentClickSubscription.unsubscribe();
   }
 
   private _setOutsideClickHandler(): void {
-    this._documentClickSubscription = this._outsideClickService.documentClick$
+    this.documentClickSubscription = this._outsideClickService.documentClick$
       .subscribe((event: Event) => {
-        if (this._toggle && this._toggle.nativeElement.contains(event.target)) {
+        if (this.toggle && this.toggle.nativeElement.contains(event.target)) {
           return;
         }
 

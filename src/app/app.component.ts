@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, QueryList, ViewChildren } from '@angular/core';
 
 import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/distinctUntilChanged';
 import { Subject } from 'rxjs/Subject';
+
 
 @Component({
   selector: 'app-root',
@@ -15,9 +16,8 @@ export class AppComponent {
   public serviceDropDownIsShown = false;
   public directiveDropDownIsShown = false;
   public eventListenerDropDownIsShown = false;
-  public lostTime = 0;
-  public numberEnding = 'st';
   public dropDownsQuantity$$: Subject<number>;
+  public dropDownsQuantity = 1;
 
 
   constructor () {
@@ -30,7 +30,7 @@ export class AppComponent {
       this._renderDropDowns(quantity);
     });
 
-    this._renderDropDowns(1);
+    this._renderDropDowns(this.dropDownsQuantity);
   }
 
   public showServiceDropDown() {
@@ -43,7 +43,6 @@ export class AppComponent {
     this.directiveDropDownIsShown = !this.directiveDropDownIsShown;
     this.serviceDropDownIsShown = false;
     this.eventListenerDropDownIsShown = false;
-
   }
 
   public showEventListenerDropDown() {
@@ -53,19 +52,8 @@ export class AppComponent {
   }
 
   public updateDropDownsQuantity (value) {
-    this.dropDownsQuantity$$.next(value)
-  }
-
-  public checkEnding(index) {
-    if (index === '1') {
-      this.numberEnding = 'st';
-    } else if (index === '2') {
-      this.numberEnding = 'nd';
-    } else if (index === '3') {
-      this.numberEnding = 'rd';
-    } else {
-      this.numberEnding = 'th';
-    }
+    this.dropDownsQuantity = value;
+    this.dropDownsQuantity$$.next(value);
   }
 
 

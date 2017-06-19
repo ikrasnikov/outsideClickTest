@@ -2,6 +2,10 @@
   padding: 15px 0;
 }
 
+.container-item {
+  padding: 5px 0;
+}
+
 .attention {
   color: red;
   font-weight: bold;
