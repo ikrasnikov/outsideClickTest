@@ -1,0 +1,40 @@
+/**
+ *  USER ROW component
+ *
+ *  styling for user table cells
+ *
+ *    .user-row-cell-teams
+ *    .user-row-cell-licenses
+ *    .user-row-cell-status
+ *
+ *  how to use
+ *  ----------
+ *  use together with .layout-inline
+ *
+ *    .layout-inline
+ *      .layout-inline__cell.user-row-cell-user
+ *      .layout-inline__cell.user-row-cell-price
+ *      .layout-inline__cell.user-row-cell-licenses
+ *      .layout-inline__cell.user-row-cell-status
+ *
+ */
+
+.user-row-cell-name {
+  width: 200px;
+}
+
+.user-row-cell-teams {
+  width: 200px;
+}
+
+.user-row-cell-licenses {
+  width: 120px;
+}
+
+.user-row-cell-status {
+  width: 100px;
+}
+
+.user-row-cell-team-users {
+  width: 300px;
+}

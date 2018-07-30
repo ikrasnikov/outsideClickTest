@@ -1,0 +1,25 @@
+/**
+ *  SCROLLABLE LIST component
+ *
+ *  a bordered box with a fixed height that shows a list of items
+ *
+ *     .scrollable-list
+ *
+ *  how to use
+ *  ----------
+ *  combine with a layout to display the list of items
+ *
+ *    .scrollable-list
+ *      .layout-list.layout-list--12px
+ *        .layout-list__item
+ *          (whatever)
+ *
+ */
+
+
+.scrollable-list {
+ padding: 10px 16px;
+ border: 1px solid rgba($lms-color-dark, 0.1);
+ height: 240px;
+ overflow: auto;
+}

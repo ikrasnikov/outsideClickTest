@@ -1,0 +1,19 @@
+.mat-chip-list {
+  .mat-chip:not(.mat-basic-chip) {
+    font-size: 14px;
+    line-height: 20px;
+    background: rgba($lms-color-dark, 0.1) !important;
+    color: $lms-color-dark !important;
+  }
+
+  .mat-chip,
+  .mat-chip:not(.mat-basic-chip)+.mat-chip:not(.mat-basic-chip) {
+    margin: 0 8px 6px 0;
+  }
+
+  input.mat-chip-input {
+    flex: 1 0 100px;
+    width: 100px;
+    margin: 0;
+  }
+}

@@ -1,0 +1,29 @@
+/**
+ *  FIELD ERROR component
+ *
+ *  an independent cutom error message that can be shown for several mat-form-fields
+ *  or for a ngx-wig instance.
+ *
+ *    .field-error
+ *
+ *  how to use
+ *  ----------
+ *  with mat-form-field:
+ *  place below mat-form-field (don't forget make the form control invalid)
+ *
+ *    mat-form-field
+ *    .field-error
+ *
+ *  with ngx-wig:
+ *  place inside .nw-error container
+ *
+ *    ngx-wig
+ *    .nw-error[*ngIf="hasError"]
+ *      .field-error
+ *
+ */
+
+
+.field-error {
+  @extend %field-error;
+}

@@ -1,0 +1,199 @@
+/**
+ *  FULLSCREEN PAGE component
+ *
+ *  styling for a full-screen page, such as the event page
+ *  for when assigning an event
+ *
+ *    .fullscreen-page
+ *      &__h1
+ *      &__h2
+ *      &__h3
+ *      &__h4
+ *      &__compact-text
+ *
+ *    .fullscreen-page-section
+ *      &__main
+ *      &__sidebar
+ *      &--first
+ *      &--%BG-OPTION%
+ *
+ *    .fullscreen-page-header
+ *      &__title
+ *      &__detail
+ *
+ *    .fullscreen-page-empty-selection
+ *      &__text
+ *
+ *    .fullscreen-page-floating-card
+ *      &__inner
+ *        &--float
+ *
+ */
+
+
+%content-list {
+  list-style-position: outside;
+  margin-left: 18px;
+  padding: 6px 0;
+}
+
+
+.fullscreen-page {
+  @extend %layout-list;
+  min-height: 100%;
+
+  &__h1 {
+    @extend %ellipsis;
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 500;
+  }
+
+  &__h2 {
+    @extend %ellipsis;
+    font-size: 20px;
+
+    &--strong {
+      font-weight: 500;
+    }
+  }
+
+  &__h3 {
+    @extend %ellipsis;
+    font-size: 16px;
+  }
+
+  &__h4 {
+    @extend %ellipsis;
+    font-weight: 500;
+  }
+
+  &__h5 {
+    @extend %ellipsis;
+    font-size: 14px;
+  }
+
+  &__compact-text {
+    @extend %ellipsis;
+    line-height: 16px;
+  }
+
+  &__content {
+    line-height: 24px;
+
+    & ul {
+      list-style-type: disc;
+      @extend %content-list;
+    }
+
+    & ol {
+      list-style-type: decimal;
+      @extend %content-list;
+    }
+
+    & b,
+    & strong {
+      font-weight: 600;
+    }
+
+    & em,
+    & i {
+      font-style: italic;
+    }
+
+    & a {
+      color: $lms-color-primary;
+      text-decoration: underline;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+
+$lms-fullscreen-page-section-backgrounds: (
+  gradient: linear-gradient(to bottom,
+                            $lms-color-primary 0%,
+                            $lms-color-primary 360px,
+                            white 360px,
+                            white 100%),
+  dark-03: rgba($lms-color-dark, 0.03)
+);
+$lms-fullscreen-page-sidebar-width: 320px;
+
+
+.fullscreen-page-section {
+  padding: 44px 0;
+
+  &__main {
+    width: calc(100% - #{$lms-fullscreen-page-sidebar-width});
+  }
+
+  &__sidebar {
+    position: relative;
+    width: $lms-fullscreen-page-sidebar-width;
+  }
+
+  &--first {
+    padding-top: 64px;
+  }
+
+  &--grow {
+    flex-grow: 1;
+  }
+
+  @each $name, $value in $lms-fullscreen-page-section-backgrounds {
+    &--#{$name} {
+      background: $value;
+    }
+  }
+}
+
+
+.fullscreen-page-header {
+  &__title {
+    font-size: 24px;
+    line-height: 36px;
+    color: white;
+  }
+
+  &__detail {
+    color: rgba(white, 0.8);
+
+    &:not(:last-child):after {
+      content: '|';
+      margin-left: 10px;
+      color: rgba(white, 0.5);
+    }
+  }
+}
+
+
+.fullscreen-page-empty-selection {
+  padding-top: 28px;
+  text-align: center;
+  color: rgba($lms-color-dark, 0.5);
+
+  &__text {
+    width: 70%;
+    margin: 0 auto;
+  }
+}
+
+
+.fullscreen-page-floating-card {
+  position: relative;
+
+  &__inner {
+    z-index: 1;
+    position: absolute;
+    width: $lms-fullscreen-page-sidebar-width - 24px; // compensate for padding
+
+    &--float {
+      position: fixed;
+      top: $lms-page-header-height + 24px;
+    }
+  }
+}

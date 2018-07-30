@@ -1,0 +1,49 @@
+.request-approval-status {
+  @extend %card;
+  width: 360px;
+  background: white;
+  padding: 16px;
+}
+
+
+.request-approval-status-title {
+  opacity: .5;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.request-approval-status-manager {
+  @extend %layout-inline;
+  margin-top: 32px;
+
+  &__avatar {
+    width: 40px;
+    height: 40px;
+    margin-right: 16px;
+  }
+
+  &__status {
+    margin-left: 14px;
+  }
+
+  &__body {
+    width: 220px;
+    overflow: hidden;
+  }
+
+  &__name, &__email {
+    @extend %ellipsis;
+    display: block;
+  }
+
+  &__name {
+    font-size: 16px;
+    line-height: 24px;
+    color: rgba($lms-color-dark, .87);
+  }
+
+  &__email {
+    color: rgba($lms-color-dark, .54);
+    line-height: 20px;
+  }
+}

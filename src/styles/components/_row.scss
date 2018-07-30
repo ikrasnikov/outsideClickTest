@@ -1,0 +1,242 @@
+/**
+ *  ROW component
+ *
+ *  styling for a colored rectangle with shadows that is meant to be stacked with other rows
+ *  (stacked rows are delimited by a border)
+ *
+ *  background color variations:
+ *  white (default) primary success danger danger-50per warning dark dark-05per
+ *
+ *    .row
+ *      &__body
+ *      &__label
+ *      &--first
+ *      &--last
+ *      &--interactive
+ *      &--%BG_COLOR%
+ *
+ *    .row-interactions-left
+ *    .row-interactions-right
+ *
+ *  for tables (e.g., a table of users), use .row-table-body istead of .row__body for consistent spacing and height
+ *
+ *    .row-table-body
+ *      &__select
+ *
+ *    .row-table-body-content
+ *      &__field
+ *        &--header
+ *
+ *  a row's rounded borders/border could be additionally governed via .row-wrapper (e.g., from <lms-rows-list> component)
+ *  .row-wrapper is an optional wrapper around row, only used in a specific case of <lms-rows-list>
+ *
+ *    .row-wrapper
+ *      &--first
+ *      &--last
+ *
+ *  how to use
+ *  ----------
+ *
+ *  row
+ *  ===
+ *  for a rows that do not have fixed height, .row__body provides padding
+ *  if a row has interaction on hover (e.g., actions or drag-n-drop), use .row--interactive modifier
+ *  and .row-interactions-{left|right} for the actions and/or a drag handle
+ *
+ *    .row(.row--first)(.row--last)(.row--%BG_COLOR%)(.row--interactive)
+ *      .row__body
+ *        (content)
+ *      .row-interactions-left
+ *        (drag handle)
+ *      .row-interactions-right
+ *        (actions)
+ *
+ *  row-table-body
+ *  ==============
+ *  for rows inside tables (have fixed height and truncation) use .row-table-body instead of .row__body
+ *  to ensure proper spacing and column truncation across tables, use the .layout-inline
+ *  for the columns that should span a specific width, add an entity-specific column class to the respective .layout-inline__item
+ *  for the column that should expand to fill the remaining space add .layout-inline__item--expand
+ *
+ *    .row(.row--first)(.row--last)(.row--%BG_COLOR%)(.row--interactive)
+ *      .row-table-body
+ *        .row-table-body__select
+ *          (checkbox)
+ *        .row-table-body-content
+ *          .layout-inline.layout-inline--stretch
+ *            .layout-inline__item.row-email-cell-name
+ *              .row-table-body-content__field
+ *            .layout-inline__item.layout-inline__item--expand
+ *              .row-table-body-content__field
+ *      .row-interactions-left
+ *        (drag handle)
+ *      .row-interactions-right
+ *        (actions)
+ *
+ *
+ *  <lms-rows-list>
+ *  ===============
+ *  in lms-rows-list component, rounded borders are governed from outside .row component
+ *  in this case, use modifiers --first and --last on .row-wrapper around .row
+ *
+ *    .row-wrapper(.row-wrapper--first)(.row-wrapper--last)
+ *      .row
+ *        ...
+ *
+ *
+ */
+
+$lms-row-themes: dark primary danger danger-05per warning success dark-05per;
+
+$lms-row-backgrounds: (
+  dark: $lms-color-dark,
+  primary: $lms-color-primary,
+  danger: $lms-color-danger,
+  danger-05per: linear-gradient(rgba($lms-color-danger, 0.05), rgba($lms-color-danger, 0.05)) white,
+  warning: $lms-color-warning,
+  success: $lms-color-success,
+  // trick to overlay multiple background-colors
+  dark-05per: linear-gradient(rgba($lms-color-dark, 0.05), rgba($lms-color-dark, 0.05)) white
+);
+
+$lms-row-colors: (
+  dark: white,
+  primary: white,
+  danger: white,
+  danger-05per: $lms-color-dark,
+  warning: $lms-color-dark,
+  success: white,
+  dark-05per: $lms-color-dark
+);
+
+
+.row-wrapper {
+  display: block;
+  width: 100%;
+}
+
+
+.row {
+  @extend %card;
+  position: relative;
+  background: white;
+  box-shadow: 0 0 2px 0 rgba(black, .12),
+              0 2px 2px 0 rgba(black, .24);
+  border-radius: 0;
+  border-bottom: 1px solid rgba($lms-color-dark, .1);
+
+
+  &__body {
+    display: block;
+    width: 100%;
+    padding: 16px 24px;
+  }
+
+  &__label {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  &--interactive {
+    cursor: pointer;
+
+    &:hover {
+      background: $lms-color-hover;
+    }
+  }
+
+  &--first {
+    border-top-right-radius: 2px;
+    border-top-left-radius: 2px;
+  }
+
+  &--last {
+    border-bottom-right-radius: 2px;
+    border-bottom-left-radius: 2px;
+    border-bottom: none;
+  }
+
+  @each $theme in $lms-row-themes {
+    &--#{$theme} {
+      background: map-get($lms-row-backgrounds, $theme);
+      color: map-get($lms-row-colors, $theme);
+    }
+  }
+}
+
+  .row-wrapper--first > .row {
+    border-top-right-radius: 2px;
+    border-top-left-radius: 2px;
+  }
+
+  .row-wrapper--last > .row {
+    border-bottom-right-radius: 2px;
+    border-bottom-left-radius: 2px;
+    border-bottom: none;
+  }
+
+
+%row-interactions {
+  display: none;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  background: $lms-color-hover;
+  padding: 0 16px;
+
+  .row:hover > & {
+    display: block;
+  }
+}
+
+
+.row-interactions-left {
+  @extend %row-interactions;
+  left: 0;
+}
+
+
+.row-interactions-right {
+  @extend %row-interactions;
+  right: 0;
+}
+
+
+.row-table-body {
+  @extend %layout-inline;
+
+  &__select {
+    @extend %layout-center;
+    flex-shrink: 0;
+    height: $lms-row-min-height;
+    padding-left: 24px;
+    padding-right: 24px;
+    cursor: pointer;
+  }
+}
+
+
+.row-table-body-content {
+  display: block;
+  flex: 1 1 auto;
+  overflow: hidden;
+  height: $lms-row-min-height;
+  padding: 0 24px;
+
+  &__field {
+    display: block;
+    width: 100%;
+    white-space: nowrap;
+    @extend %ellipsis;
+
+    &--header {
+      font-size: 12px;
+      font-weight: 500;
+      color: rgba($lms-color-dark, 0.5);
+    }
+  }
+}
+
+  .row-table-body__select ~ .row-table-body-content {
+    padding-left: 0;
+  }

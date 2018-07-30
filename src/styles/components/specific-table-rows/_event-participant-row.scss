@@ -1,0 +1,32 @@
+/**
+ *  EVENT PARTICIPANT ROW component
+ *
+ *  styling for event participant table cells
+ *
+ *    .event-participant-row-cell-date
+ *    .event-participant-row-cell-location
+ *    .event-participant-row-cell-status
+ *
+ *  how to use
+ *  ----------
+ *  use together with .layout-inline
+ *
+ *    .layout-inline
+ *      .layout-inline__cell.event-participant-row-cell-date
+ *      .layout-inline__cell.event-participant-row-cell-location
+ *      .layout-inline__cell.event-participant-row-cell-status
+ *
+ */
+
+
+.event-participant-row-cell-date {
+  width: 160px;
+}
+
+.event-participant-row-cell-location {
+  width: 160px;
+}
+
+.event-participant-row-cell-status {
+  width: 130px;
+}

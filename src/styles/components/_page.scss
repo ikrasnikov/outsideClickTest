@@ -1,0 +1,83 @@
+/**
+ *  PAGE component
+ *
+ *  styling for page layout with a colored header
+ *  and a body that spans the remaining space
+ *
+ *    .page
+ *      &__body
+ *
+ *    .page-header
+ *      &__title
+ *      &__status
+ *      &__info
+ *
+ *  how to use
+ *  ----------
+ *  position elements inside the header and page-body-content using layouts,
+ *  such as the following:
+ *
+ *    .page
+ *      .page-header
+ *        .layout-split.layout-split--stretch
+ *          .layout-split__item
+ *            .page-header__title
+ *            .page-header__info
+ *          .layout-split__item
+ *            .layout-inline
+ *              .layout-inline__item
+ *                .page-header__status
+ *              .layout-inline__item
+ *                (action button)
+ *      .layout-offscreen(.layout-offscreen--300)
+ *        .layout-offscreen__body
+ *          .page-body
+ *            (content)
+ *        .layout-offscreen__panel
+ *          .page-body
+ *            (filters)
+ *
+ *
+ **/
+
+
+.page {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: rgba($lms-color-dark, 0.05);
+
+  &__body {
+    padding: 24px;
+    display: block;
+    height: calc(100% - #{$lms-page-header-height});
+    overflow: auto;
+  }
+}
+
+
+%page-header-info {
+  line-height: 18px;
+  opacity: 0.7;
+}
+
+
+.page-header {
+  @extend %pagebar;
+
+  &__title {
+    font-size: 20px;
+    line-height: 24px;
+    white-space: nowrap;
+    @extend %ellipsis;
+  }
+
+  &__info {
+    @extend %page-header-info;
+  }
+
+  &__status {
+    @extend %page-header-info;
+    font-style: italic;
+  }
+}

@@ -1,0 +1,23 @@
+/**
+ *  COMPONENT WRAPPER component
+ *
+ *  default styling for wrapper-container on angular components
+ *
+ *    .component-wrapper
+ *
+ *  how to use
+ *  ----------
+ *  in *.component.ts
+ *
+ *    ...
+ *    encapsulation: ViewEncapsulation.None,
+ *    host: { class: 'component-wrapper' }
+ *    ...
+ *
+ **/
+
+
+.component-wrapper {
+  display: block;
+  width: 100%;
+}

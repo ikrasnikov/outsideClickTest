@@ -1,0 +1,27 @@
+
+/**
+ *  EVENT STUDY MATERIALS ROW component
+ *
+ *  styling for event study materials tab, table cells
+ *
+ *    .event-study-materials-row-cell-file-size
+ *    .event-study-materials-row-cell-date
+ *
+ *  how to use
+ *  ----------
+ *  use together with .layout-inline
+ *
+ *    .layout-inline
+ *      .layout-inline__item.event-study-materials-row-cell-file-size
+ *      .layout-inline__item.event-study-materials-row-cell-date
+ *
+ */
+
+
+.event-study-materials-row-cell-file-size {
+  width: 120px;
+}
+
+.event-study-materials-row-cell-date {
+  width: 120px;
+}

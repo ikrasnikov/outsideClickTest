@@ -1,0 +1,127 @@
+/**
+ *  THUMBNAIL component
+ *
+ *  styling for learning items' thumbnail images
+ *  provides a default image if there's no image
+ *
+ *    .thumbnail
+ *      &--empty
+ *      &--bordered
+ *      &--60px, &--80px, &--120px
+ *
+ *    .thumbnail-learning-info
+ *      &--empty
+ *      &--overlay-%ICON%
+ *
+ *  how to use
+ *  ----------
+ *  acts as an image in a media-object that
+ *  represents a learning item.
+ *
+ *  usage inside rows:
+ *
+ *    .laoyut-inline
+ *      .layout-inline__item
+ *        .thumbnail(.thumbnail--empty)
+ *      .layout-inline__item.layout-inline--item--expanded
+ *        (body)
+ *
+ *  inside info components use .thumbnail-learning-info component
+ *  add --overlay-%ICON% for overlaying the thumbnail with an icon
+ *
+ *    .card
+ *      .learning-info
+ *        .thumbnail-learning-info(.thumbnail-learning-info--empty)(.thumbnail-learning-info--overlay-%ICON%)
+ *        .card__body
+ *
+ */
+
+
+%thumbnail {
+  position: relative;
+  @extend %layout-center;
+  background-position: center center;
+  background-size: cover;
+  background-color: rgba($lms-color-dark, 0.1);
+
+  &:after {
+    @extend %layout-center;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    font-family: Material Design Icons;
+
+    color: rgba($lms-color-dark, 0.3);
+  }
+}
+
+
+$lms-thumbnail-sizes: 60px 80px 120px;
+
+
+.thumbnail {
+  @extend %thumbnail;
+  width: 48px;
+  height: 48px;
+  border-radius: 3px;
+
+  &--empty:after {
+    content: "\F2E9";
+
+    font-size: 24px;
+    line-height: 24px;
+  }
+
+  &--bordered {
+    border: 1px solid rgba($lms-color-dark, 0.3);
+  }
+
+  @each $size in $lms-thumbnail-sizes {
+    &--#{$size} {
+      width: $size;
+      height: $size;
+    }
+  }
+}
+
+
+$thumbnail-overlay-icons: (
+  article: '\F21A',
+  document: '\F225',
+  video: '\F5C3'
+);
+
+
+.thumbnail-learning-info {
+  @extend %thumbnail;
+  position: relative;
+  height: 100%;
+  width: 150px;
+  border-radius: 3px 0 0 3px;
+
+  &:after {
+    font-size: 48px;
+    line-height: 48px;
+  }
+
+  &--empty:after {
+    content: "\F2E9";
+  }
+
+  @each $icon, $value in $thumbnail-overlay-icons {
+    &--overlay-#{$icon} {
+      &:after {
+        content: $value;
+      }
+
+      &:not(.thumbnail-learning-info--empty):after {
+        color: rgba(white, 0.65);
+        background-color: rgba($lms-color-dark, 0.2);
+      }
+    }
+  }
+}

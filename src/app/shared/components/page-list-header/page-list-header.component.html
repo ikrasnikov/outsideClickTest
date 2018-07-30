@@ -1,0 +1,34 @@
+<div class="app-content-page-header__item"
+     [class.app-content-page-header__item--deep]="deep && !hasSecondLevelHeader">
+  <div class="layout-split">
+    <div class="layout-split__item"
+         *ngIf="deep && !hasSecondLevelHeader">
+      <ng-content select="[firstLevelPrefix]"></ng-content>
+    </div>
+
+    <div class="layout-split__item"
+         [class.is--push-0px]="deep && searchIsExpanded && !hasSecondLevelHeader">
+      <ng-content select="[firstHeader]"></ng-content>
+    </div>
+    <ng-content select="[actions]"></ng-content>
+  </div>
+</div>
+
+<div *ngIf="hasSecondLevelHeader"
+     class="app-content-page-header__item"
+     [class.app-content-page-header__item--deep]="deep"
+     [class.app-content-page-header__item--collapsed]="isSecondLevelHeaderCollapsed">
+  <div class="layout-inline layout-inline--stretch layout-inline--24px">
+    <div class="layout-inline__item"
+         *ngIf="deep">
+      <ng-content select="[secondLevelPrefix]"></ng-content>
+    </div>
+
+    <div class="layout-inline__item"
+         [class.is--push-0px]="deep && searchIsExpanded">
+      <ng-content select="[secondHeader]"></ng-content>
+    </div>
+  </div>
+</div>
+
+

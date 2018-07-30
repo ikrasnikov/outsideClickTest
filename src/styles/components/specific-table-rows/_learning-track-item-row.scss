@@ -1,0 +1,32 @@
+/**
+ *  LEARNING TRACK ITEM ROW component
+ *
+ *  styling for learning-track-item table cells
+ *
+ *    .learning-track-item-row-cell-order
+ *    .learning-track-item-row-cell-type
+ *    .learning-track-item-row-cell-price
+ *
+ *  how to use
+ *  ----------
+ *  use together with .layout-inline
+ *
+ *    .layout-inline
+ *      .layout-inline__cell.learning-track-item-row-cell-order
+ *      .layout-inline__cell.learning-track-item-row-cell-type
+ *      .layout-inline__cell.learning-track-item-row-cell-price
+ *
+ */
+
+
+.learning-track-item-row-cell-order {
+  width: 40px;
+}
+
+.learning-track-item-row-cell-type {
+  width: 120px;
+}
+
+.learning-track-item-row-cell-price {
+  width: 120px;
+}

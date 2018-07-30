@@ -1,0 +1,33 @@
+$lms-preview-iframe-height: 530px;
+
+%field {
+  @extend %layout-list;
+  align-items: flex-start;
+}
+
+
+.automated-email-templates-expanded-row {
+  display: flex;
+  flex: 1;
+}
+
+
+.automated-email-templates-expanded-row-cell-description {
+  @extend %field;
+  flex: 1;
+  margin-left: 24px;
+}
+
+
+.automated-email-templates-expanded-row-cell-status {
+  @extend %field;
+  flex-basis: 120px;
+  margin-left: 24px;
+}
+
+
+.automated-email-templates-expanded-row-cell-actions {
+  @extend %field;
+  margin-left: 24px;
+}
+

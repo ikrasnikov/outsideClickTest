@@ -1,0 +1,36 @@
+$lms-mat-input-default-theme: dark;
+$lms-mat-input-alternative-themes: light;
+
+$lms-mat-input-theme-colors: (
+  light: white,
+  dark: $lms-color-dark
+);
+
+
+.mat-input-element {
+  display: block;
+  height: 24px;
+  padding: 0 !important;
+  margin-top: 0 !important;
+  font-size: inherit !important;
+  line-height: inherit !important;
+
+  // default theme
+  color: map-get($lms-mat-input-theme-colors, $lms-mat-input-default-theme);
+
+  &:disabled {
+    color: rgba(map-get($lms-mat-input-theme-colors, $lms-mat-input-default-theme), 0.5);
+    cursor: not-allowed !important;
+  }
+}
+
+
+@each $theme-name in $lms-mat-input-alternative-themes {
+  .mat-input-element[lms-theme="#{$theme-name}"] {
+    color: map-get($lms-mat-input-theme-colors, $theme-name);
+
+    &:disabled {
+      color: rgba(map-get($lms-mat-input-theme-colors, $theme-name), 0.5);
+    }
+  }
+}

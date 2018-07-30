@@ -1,0 +1,41 @@
+.reports-graphs-card {
+  display: flex;
+  flex-basis: 25%;
+  margin-right: 16px;
+
+  &--last {
+    margin-right: 0;
+  }
+}
+
+
+.mat-card.reports-graphs-card {
+  &__body {
+    @extend %layout-center;
+    flex: 1;
+    padding: 40px 50px;
+
+    @media(min-width: 1200px) and (max-width: 1400px) {
+      padding: 25px 30px;
+    }
+
+    @media(max-width: 1200px) {
+      padding: 15px 20px;
+    }
+  }
+
+}
+
+
+.reports-graphs-card-count {
+  font-size: 36px;
+  color: $lms-color-primary;
+  margin-right: 16px;
+}
+
+
+.reports-graphs-card-caption {
+  font-weight: bold;
+  color: $text-color-muted;
+  max-width: 125px;
+}

@@ -1,0 +1,33 @@
+
+/**
+ *  LIVE SESSION WAITING USER ROW component
+ *
+ *  styling for live session waiting list table cells
+ *
+ *    .live-session-waiting-user-row-cell-position
+ *    .live-session-waiting-user-row-cell-user
+ *    .live-session-waiting-user-row-cell-requested
+ *
+ *  how to use
+ *  ----------
+ *  use together with .layout-inline
+ *
+ *    .layout-inline
+ *      .layout-inline__item.live-session-waiting-user-row-cell-position
+ *      .layout-inline__item.live-session-waiting-user-row-cell-user
+ *      .layout-inline__item.live-session-waiting-user-row-cell-requested
+ *
+ */
+
+
+.live-session-waiting-user-row-cell-position {
+  width: 70px;
+}
+
+.live-session-waiting-user-row-cell-user {
+  flex: 2;
+}
+
+.live-session-waiting-user-row-cell-requested {
+  flex: 1;
+}

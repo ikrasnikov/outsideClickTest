@@ -1,0 +1,36 @@
+.color-settings {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-flow: row nowrap;
+  padding: 16px 0;
+
+  &__picker {
+    flex: 0 1 auto;
+    width: 24px;
+    height: 24px;
+    border-radius: 3px;
+    border: 1px solid rgba($dark-color ,0.04);
+  }
+
+  &__color {
+    flex: 1 1;
+    padding-left: 16px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-flow: column nowrap;
+
+    &-title {
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    &-description {
+      color: $text-color-muted;
+      font-size: 12px;
+      line-height: 20px;
+    }
+  }
+}

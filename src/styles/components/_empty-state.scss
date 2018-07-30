@@ -1,0 +1,45 @@
+/**
+ *  EMPTY STATE component
+ *
+ *  styles for empty states (normal and small variation)
+ *
+ *    .empty-state
+ *      &__icon
+ *      &__text
+ *        &--small
+ *
+ *  how to use
+ *  ----------
+ *
+ *    .empty-state
+ *      .empty-state__icon
+ *      .empty-state__text(.empty-state__text--small)
+ *
+ */
+
+
+.empty-state {
+  height: 100%;
+  @extend %layout-center;
+  flex-direction: column;
+
+  height: 272px;
+
+  color: rgba($lms-color-dark, 0.5);
+
+  &__icon {
+    margin-bottom: 20px;
+  }
+
+  &__text {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 32px;
+    text-align: center;
+
+    &--small {
+      font-size: 20px;
+      line-height: 24px;
+    }
+  }
+}

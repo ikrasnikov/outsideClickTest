@@ -1,0 +1,26 @@
+/**
+ *  INVITATION ROW component
+ *
+ *  styling for user invitation table rows
+ *
+ *    .invitation-row-cell-license
+ *    .invitation-row-cell-action
+ *
+ *  how to use
+ *  ----------
+ *  use together with .layout-inline
+ *
+ *    .layout-inline
+ *      .layout-inline__cell.invitation-row-cell-license
+ *      .layout-inline__cell.invitation-row-cell-action
+ *
+ */
+
+
+.invitation-row-cell-license {
+  width: 52px;
+}
+
+.invitation-row-cell-action {
+  width: 52px;
+}

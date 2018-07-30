@@ -1,0 +1,38 @@
+/**
+ *  REQUEST ROW component
+ *
+ *  styling for request table cells
+ *
+ *    .request-row-cell-user
+ *    .request-row-cell-price
+ *    .request-row-cell-status
+ *    .request-row-cell-date
+ *
+ *  how to use
+ *  ----------
+ *  use together with .layout-inline
+ *
+ *    .layout-inline
+ *      .layout-inline__cell.request-row-cell-user
+ *      .layout-inline__cell.request-row-cell-price
+ *      .layout-inline__cell.request-row-cell-status
+ *      .layout-inline__cell.request-row-cell-date
+ *
+ */
+
+
+.request-row-cell-user {
+  width: 150px;
+}
+
+.request-row-cell-price {
+  width: 100px;
+}
+
+.request-row-cell-status {
+  width: 120px;
+}
+
+.request-row-cell-date {
+  width: 100px;
+}

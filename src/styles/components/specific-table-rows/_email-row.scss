@@ -1,0 +1,38 @@
+/**
+ *  EMAIL ROW component
+ *
+ *  styling for email table cells
+ *
+ *    .email-row-cell-user
+ *    .email-row-cell-clicks
+ *    .email-row-cell-opens
+ *    .email-row-cell-timestamp
+ *
+ *  how to use
+ *  ----------
+ *  use together with .layout-inline
+ *
+ *    .layout-inline
+ *      .layout-inline__cell.email-row-cell-user
+ *      .layout-inline__cell.email-row-cell-clicks
+ *      .layout-inline__cell.email-row-cell-opens
+ *      .layout-inline__cell.email-row-cell-timestamp
+ *
+ */
+
+
+.email-row-cell-user {
+  width: 180px;
+}
+
+.email-row-cell-clicks {
+  width: 60px;
+}
+
+.email-row-cell-opens {
+  width: 60px;
+}
+
+.email-row-cell-timestamp {
+  width: 120px;
+}

@@ -1,0 +1,100 @@
+$lms-mat-tab-themes: primary light;
+$lms-mat-tab-default-theme: primary;
+
+$lms-mat-tab-theme-colors: (
+  light: rgba(white, 0.6),
+  primary: rgba($lms-color-dark, 0.6)
+);
+
+$lms-mat-tab-theme-active-colors: (
+  light: white,
+  primary: $lms-color-primary
+);
+
+$lms-mat-tab-theme-focus-backgrounds: (
+  light: rgba(white, 0.2),
+  primary: rgba($lms-color-primary, 0.2)
+);
+
+$lms-mat-tab-theme-ripple-backgrounds: (
+  light: rgba(white, 0.12),
+  primary: rgba($lms-color-primary, 0.12)
+);
+
+$lms-mat-tab-theme-underline-colors: (
+  light: white,
+  primary: $lms-color-primary
+);
+
+.mat-tab-nav-bar {
+  border-bottom: none;
+
+  & > .mat-tab-links {
+    @extend %layout-inline;
+    flex-wrap: nowrap;
+  }
+
+  & .mat-tab-link {
+    height: 64px !important;
+    font-weight: 500;
+    display: block;
+    line-height: 64px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    opacity: 1;
+  }
+
+  & .mat-ink-bar {
+    height: 4px;
+  }
+
+  // default theme
+  &:not([lms-theme]) {
+    & .mat-tab-link {
+      &:not(.mat-tab-link--active) {
+        color: map-get($lms-mat-tab-theme-colors, $lms-mat-tab-default-theme) !important;
+      }
+
+      &.mat-tab-link--active {
+        color: map-get($lms-mat-tab-theme-active-colors, $lms-mat-tab-default-theme) !important;
+      }
+
+      &:focus {
+        background: map-get($lms-mat-tab-theme-focus-backgrounds, $lms-mat-tab-default-theme) !important;
+      }
+
+      & > .mat-ripple-element {
+        background: map-get($lms-mat-tab-theme-ripple-backgrounds, $lms-mat-tab-default-theme) !important;
+      }
+    }
+
+    & .mat-ink-bar {
+      background: map-get($lms-mat-tab-theme-underline-colors, $lms-mat-tab-default-theme) !important;
+    }
+  }
+}
+  @each $theme in $lms-mat-tab-themes {
+    .mat-tab-nav-bar[lms-theme="#{$theme}"] {
+      & .mat-tab-link {
+        &:not(.mat-tab-link--active) {
+          color: map-get($lms-mat-tab-theme-colors, $theme) !important;
+        }
+
+        &.mat-tab-link--active {
+          color: map-get($lms-mat-tab-theme-active-colors, $theme) !important;
+        }
+
+        &:focus {
+          background: map-get($lms-mat-tab-theme-focus-backgrounds, $theme) !important;
+        }
+
+        & > .mat-ripple-element {
+          background: map-get($lms-mat-tab-theme-ripple-backgrounds, $theme) !important;
+        }
+      }
+
+      & .mat-ink-bar {
+        background: map-get($lms-mat-tab-theme-underline-colors, $theme) !important;
+      }
+    }
+  }

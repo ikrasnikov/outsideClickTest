@@ -1,0 +1,38 @@
+/**
+ *  EVENT LIVE SESSION ROW component
+ *
+ *  styling for event live session table cells
+ *
+ *    .event-live-session-row-cell-date-time
+ *    .event-live-session-row-cell-participants
+ *    .event-live-session-row-cell-schedule
+ *    .event-live-session-row-cell-status
+ *
+ *  how to use
+ *  ----------
+ *  use together with .layout-inline
+ *
+ *    .layout-inline
+ *      .layout-inline__cell.event-live-session-row-cell-date-time
+ *      .layout-inline__cell.event-live-session-row-cell-participants
+ *      .layout-inline__cell.event-live-session-row-cell-schedule
+ *      .layout-inline__cell.event-live-session-row-cell-status
+ *
+ */
+
+
+.event-live-session-row-cell-date-time {
+  width: 120px;
+}
+
+.event-live-session-row-cell-participants {
+  width: 120px;
+}
+
+.event-live-session-row-cell-schedule {
+  width: 120px;
+}
+
+.event-live-session-row-cell-status {
+  width: 120px;
+}

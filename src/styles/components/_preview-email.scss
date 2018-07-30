@@ -1,0 +1,20 @@
+/**
+*  PREVIEW EMAIL component
+*
+*  styling for email preview iframe
+*
+*  .preview-email
+*    &__iframe
+*
+*/
+
+.preview-email {
+  display: block;
+  width: 100%;
+
+  &__iframe {
+    display: block;
+    height: 100%;
+    width: 100%;
+  }
+}

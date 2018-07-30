@@ -1,0 +1,8 @@
+.mat-price-delimeter {
+  opacity: 0;
+  transition: opacity 200ms;
+}
+
+.mat-price.floating .mat-price-delimeter {
+  opacity: 1;
+}

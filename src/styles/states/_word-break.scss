@@ -1,0 +1,19 @@
+/**
+ * WORD BREAK global state
+ *
+ * governs word break
+ *
+ *    .is--break-all
+ *
+ *  how to use
+ *  ==========
+ *  append to any class you want to modify
+ *
+ *    ...
+ *    .layout-inline__item.is--break-all
+ *      ...
+ */
+
+.is--break-all {
+  word-break: break-all;
+}

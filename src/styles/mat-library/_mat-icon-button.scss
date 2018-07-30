@@ -1,0 +1,87 @@
+$lms-icon-button-default-theme: dark;
+$lms-icon-button-alternative-themes: light;
+
+$lms-icon-button-theme-colors: (
+  light: white,
+  dark: $lms-color-dark
+);
+
+$lms-icon-button-theme-backgrounds: (
+  light: white,
+  dark: $lms-color-dark
+);
+
+
+.mat-icon-button {
+  display: block !important;
+  height: 36px !important;
+  width: 36px !important;
+
+  & > .mat-button-wrapper {
+    @extend %layout-center;
+    height: 100%;
+    width: 100%;
+  }
+
+  &:not(:disabled):hover {
+    & > .mat-button-focus-overlay {
+      opacity: 1;
+    }
+  }
+
+  // default theme
+  &:not(:disabled) {
+    color: rgba(map-get($lms-icon-button-theme-colors, $lms-icon-button-default-theme), 0.5) !important;
+  }
+
+  &:disabled {
+    color: rgba(map-get($lms-icon-button-theme-colors, $lms-icon-button-default-theme), 0.2) !important;
+  }
+
+  &:not(:disabled) > .mat-button-focus-overlay {
+    background-color: rgba(map-get($lms-icon-button-theme-backgrounds, $lms-icon-button-default-theme), 0.12) !important;
+  }
+
+  &:not(:disabled) .mat-ripple-element {
+    background-color: rgba(map-get($lms-icon-button-theme-backgrounds, $lms-icon-button-default-theme), 0.2) !important;
+  }
+
+  &:not(:disabled).mat-icon-button--active {
+    background-color: rgba(map-get($lms-icon-button-theme-backgrounds, $lms-icon-button-default-theme), 0.3) !important;
+  }
+}
+  @each $theme-name in $lms-icon-button-alternative-themes {
+    .mat-icon-button[lms-theme="#{$theme-name}"] {
+      &:not(:disabled) {
+        color: rgba(map-get($lms-icon-button-theme-colors, $theme-name), 0.5) !important;
+      }
+
+      &:disabled {
+        color: rgba(map-get($lms-icon-button-theme-colors, $theme-name), 0.2) !important;
+      }
+
+      &:not(:disabled) > .mat-button-focus-overlay {
+        background-color: rgba(map-get($lms-icon-button-theme-backgrounds, $theme-name), 0.12) !important;
+      }
+
+      &:not(:disabled) .mat-ripple-element {
+        background-color: rgba(map-get($lms-icon-button-theme-backgrounds, $theme-name), 0.2) !important;
+      }
+
+      &:not(:disabled).mat-icon-button--active {
+        background-color: rgba(map-get($lms-icon-button-theme-backgrounds, $theme-name), 0.3) !important;
+      }
+    }
+  }
+
+.mat-input-suffix .mat-icon-button,
+.mat-input-prefix .mat-icon-button,
+.mat-icon-button[lms-small] {
+  height: 32px !important;
+  width: 32px !important;
+
+  & .mat-icon {
+    font-size: 20px !important;
+    line-height: 20px !important;
+  }
+}

@@ -1,0 +1,38 @@
+<a class="learning-info">
+  <div class="layout-inline-learning-info">
+    <div class="layout-inline__item">
+      <div class="thumbnail-learning-info"
+           [class.thumbnail-learning-info--empty]="!item.image"
+           [style.background-image]="item.image ? 'url(' + item.image + ')' : ''">
+      </div>
+    </div>
+
+    <div class="layout-inline__item layout-inline__item--expand">
+      <div class="card__body">
+        <div class="layout-list layout-list--16px">
+          <div class="layout-list__item is--push-24px">
+            <div class="learning-info__title">
+              {{ item.name }}
+            </div>
+          </div>
+
+          <div class="layout-list__item">
+            <div class="layout-split">
+              <div class="layout-split__item">
+                <div class="layout-inline layout-inline--10px">
+                  <div class="layout-inline__item learning-info__detail">
+                    {{ item.type }}
+                  </div>
+
+                  <div class="layout-inline__item learning-info__detail">
+                    {{ item.duration }}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</a>

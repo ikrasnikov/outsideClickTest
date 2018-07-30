@@ -1,61 +1,57 @@
-<div class="container">
+<lms-page-list>
+  <lms-page-list-header [hasSecondLevelHeader]="true"
+                        [isSecondLevelHeaderCollapsed]="true">
 
-  <span>
-    DropDown quantity
-  </span>
-  <input type="number"
-         class="number-input"
-         min="0"
-         max="9999"
-         step="1"
-         (input)="updateDropDownsQuantity($event.target.value)"
-         [value]="dropDownsQuantity">
+    <ng-container firstHeader>
+      <div class="app-content-page-header__title">
+        Outside click performance test
+      </div>
+    </ng-container>
 
-</div>
+    <ng-container secondHeader>
+      <nav mat-tab-nav-bar>
+        <a mat-tab-link
+           routerLink="service"
+           routerLinkActive="mat-tab-link--active"
+           #serviceRla="routerLinkActive"
+           [active]="serviceRla.isActive">
+          Service using angular listener
+        </a>
 
-<div class="container">
+        <a mat-tab-link
+           routerLink="event-listener"
+           routerLinkActive="mat-tab-link--active"
+           #eventListenerRla="routerLinkActive"
+           [active]="eventListenerRla.isActive">
+          Native event listener
+        </a>
 
-  <button (click)="showServiceDropDown()">
-    Use service
-  </button>
-  <button (click)="showEventListenerDropDown()">
-    Use event listener
-  </button>
-  <button (click)="showDirectiveDropDown()">
-    Use directive
-  </button>
+        <a mat-tab-link
+           routerLink="directive"
+           routerLinkActive="mat-tab-link--active"
+           #hostListenerRla="routerLinkActive"
+           [active]="hostListenerRla.isActive">
+          HostListener directive
+        </a>
+      </nav>
+    </ng-container>
 
-</div>
+    <ng-container actions>
+      <div class="layout-inline__item">
+        <mat-form-field>
+          <mat-label>
+            Elements quantity
+          </mat-label>
+          <input type="text"
+                 maxlength="7"
+                 matInput
+                 placeholder="0"
+                 (input)="updateDropDownsQuantity($event.target.value)"
+                 [value]="dropDownsQuantity">
+        </mat-form-field>
+      </div>
+    </ng-container>
+  </lms-page-list-header>
 
-<div *ngIf="serviceDropDownIsShown">
-  <h2>
-    Now we use
-    <span class="attention">
-    service
-  </span>
-  </h2>
-  <app-drop-down-service *ngFor="let dropDown of manyDropDowns">
-  </app-drop-down-service>
-</div>
-
-<div *ngIf="eventListenerDropDownIsShown">
-  <h2>
-    Now we use
-    <span class="attention">
-    event listener
-  </span>
-  </h2>
-  <app-drop-down-event-listener *ngFor="let dropDown of manyDropDowns">
-  </app-drop-down-event-listener>
-</div>
-
-<div *ngIf="directiveDropDownIsShown">
-  <h2>
-    Now we use
-    <span class="attention">
-    directive
-  </span>
-  </h2>
-  <app-drop-down-directive *ngFor="let dropDown of manyDropDowns">
-  </app-drop-down-directive>
-</div>
+  <router-outlet></router-outlet>
+</lms-page-list>

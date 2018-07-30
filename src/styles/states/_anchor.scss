@@ -1,0 +1,14 @@
+/**
+ *  ANCHOR global state
+ *
+ *  sets position: relative so that it can contain
+ *  absolutely positioned children
+ *
+ *    .is--anchor
+ *
+ */
+
+
+.is--anchor {
+  position: relative;
+}

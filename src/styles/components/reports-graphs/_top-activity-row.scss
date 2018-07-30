@@ -1,0 +1,24 @@
+.top-activity-row {
+  @extend %layout-inline;
+  flex: 1;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba($lms-color-dark, 0.1);
+}
+
+.top-activity-row-item {
+  display: flex;
+  flex: 1;
+}
+
+
+.top-activity-row-name {
+  @extend %layout-inline;
+  flex: 1;
+}
+
+
+.top-activity-row-time-spent {
+  @extend %layout-inline;
+  flex: 1;
+  justify-content: flex-end;
+}

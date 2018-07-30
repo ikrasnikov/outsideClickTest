@@ -1,0 +1,65 @@
+$lms-mat-select-default-theme: dark;
+$lms-mat-select-themes: light;
+
+$lms-mat-select-theme-colors: (
+  light: white,
+  dark: $lms-color-dark
+);
+
+
+.mat-select {
+  height: 24px;
+  line-height: 24px;
+
+  &.mat-select-disabled {
+    cursor: not-allowed !important;
+
+    & .mat-select-value {
+      cursor: not-allowed !important;
+    }
+
+    & .mat-select-arrow {
+      cursor: not-allowed !important;
+    }
+  }
+
+
+  // default theme
+
+  &:not(.mat-select-disabled) .mat-select-value {
+    color: map-get($lms-mat-select-theme-colors, $lms-mat-select-default-theme);
+  }
+
+  &:not(.mat-select-disabled) .mat-select-arrow {
+    color: map-get($lms-mat-select-theme-colors, $lms-mat-select-default-theme) !important;
+  }
+
+  &.mat-select-disabled .mat-select-value {
+    color: rgba(map-get($lms-mat-select-theme-colors, $lms-mat-select-default-theme), 0.5);
+  }
+
+  &.mat-select-disabled .mat-select-arrow {
+    color: rgba(map-get($lms-mat-select-theme-colors, $lms-mat-select-default-theme), 0.5) !important;
+  }
+}
+
+
+@each $theme-name in $lms-mat-select-themes {
+  .mat-select[lms-theme="#{$theme-name}"] {
+    &:not(.mat-select-disabled) .mat-select-value {
+      color: map-get($lms-mat-select-theme-colors, $theme-name);
+    }
+
+    &:not(.mat-select-disabled) .mat-select-arrow {
+      color: map-get($lms-mat-select-theme-colors, $theme-name) !important;
+    }
+
+    &.mat-select-disabled .mat-select-value {
+      color: rgba(map-get($lms-mat-select-theme-colors, $theme-name), 0.5);
+    }
+
+    &.mat-select-disabled .mat-select-arrow {
+      color: rgba(map-get($lms-mat-select-theme-colors, $theme-name), 0.5) !important;
+    }
+  }
+}

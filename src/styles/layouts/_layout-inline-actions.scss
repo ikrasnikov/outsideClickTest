@@ -1,0 +1,6 @@
+.layout-inline-actions {
+  @extend .layout-inline;
+  @extend .layout-inline--16px;
+  @extend .layout-inline--align-right;
+  padding: 12px 24px;
+}

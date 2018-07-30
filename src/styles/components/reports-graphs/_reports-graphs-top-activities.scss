@@ -1,0 +1,25 @@
+.reports-graphs-top-activities {
+  display: flex;
+  margin-top: 26px;
+  width: 100%;
+}
+
+
+.reports-graphs-top-activities-activity-card {
+  flex-basis: 50%;
+
+  &:last-child {
+    margin-left: 24px;
+  }
+
+  &__title {
+    font-size: 20px;
+    opacity: 0.87;
+  }
+
+  &__sub-title {
+    font-size: 12px;
+    color: $text-color;
+    opacity: 0.5;
+  }
+}

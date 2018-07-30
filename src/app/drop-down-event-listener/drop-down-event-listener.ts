@@ -3,20 +3,19 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 @Component({
   selector: 'app-drop-down-event-listener',
   templateUrl: './drop-down-event-listener.html',
-  styleUrls: ['./drop-down-event-listener.css']
 })
 export class DropDownEventListenerComponent {
 
-  public isShown = false;
+  public isShown: boolean = false;
 
 
   @ViewChild('toggle')
   private _toggle: ElementRef;
 
-  private _outsideClickListener;
+  private _outsideClickListener: () => {};
 
 
-  constructor() {}
+  public constructor() {}
 
   public toggleContent(): void {
     if (this.isShown) {
@@ -39,7 +38,7 @@ export class DropDownEventListenerComponent {
     document.removeEventListener('click', this._outsideClickListener);
   }
 
-  private _outsideClickHandler(event) {
+  private _outsideClickHandler(event: Event): void {
     if (this._toggle && this._toggle.nativeElement.contains(event.target)) {
       return;
     }

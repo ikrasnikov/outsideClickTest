@@ -1,0 +1,64 @@
+/**
+ *  AVATAR component
+ *
+ *  styling for round avatar with an top-right icon
+ *  icon and an error status
+ *
+ *    .avatar
+ *      &__image
+ *      &__icon
+ *      &__text
+ *      &--%SIZE%
+ *      &--danger
+ *
+ */
+
+
+$lms-avatar-sizes: 36px 40px;
+$lms-avatar-default-size: 36px;
+
+
+.avatar {
+  display: block;
+  position: relative;
+  width: $lms-avatar-default-size;
+  height: $lms-avatar-default-size;
+
+  border-radius: 50%;
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+  }
+
+  &__text {
+    fill: #fff;
+    font-weight: 300;
+  }
+
+  &__icon {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14),
+                0 3px 4px 0 rgba(0,0,0,0.12),
+                0 1px 8px 0 rgba(0,0,0,0.20);
+  }
+
+  &--danger {
+    background: rgba($lms-color-danger, 0.3);
+  }
+
+  @each $size in $lms-avatar-sizes {
+    &--#{$size} {
+      width: $size;
+      height: $size;
+    }
+  }
+}

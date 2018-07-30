@@ -1,0 +1,16 @@
+<div class="layout-offscreen layout-offscreen--right">
+  <div class="layout-offscreen__main content-panel">
+    <div class="layout-list layout-list--16px">
+      <ng-container>
+        <div class="layout-list__item"
+             *ngFor="let item of items">
+          <div class="layout-content">
+            <app-content-item [item]="item"></app-content-item>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>
+
+

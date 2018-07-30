@@ -1,0 +1,26 @@
+$lms-mat-spinner-default-theme: primary;
+$lms-mat-spinner-alternative-themes: light danger;
+
+$lms-mat-spinner-theme-colors: (
+  light: white,
+  primary: $lms-color-primary,
+  danger: $lms-color-danger
+);
+
+
+.mat-spinner {
+  // default theme
+
+  & circle {
+    stroke: map-get($lms-mat-spinner-theme-colors, $lms-mat-spinner-default-theme);
+  }
+}
+
+
+@each $theme-name in $lms-mat-spinner-alternative-themes {
+  .mat-spinner[lms-theme="#{$theme-name}"] {
+    & circle {
+      stroke: map-get($lms-mat-spinner-theme-colors, $theme-name);
+    }
+  }
+}

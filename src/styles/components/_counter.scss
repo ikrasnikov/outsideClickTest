@@ -1,0 +1,52 @@
+/**
+ *  COUNTER component
+ *
+ *  top-right corner counter, e.g., for number of emails
+ *
+ *    .counter
+ *      &--%COLOR%
+ *
+ *  how to use
+ *  ==========
+ *  decorate the parent with .is--anchor global state
+ *  so that the counter gets positioned in a proper way
+ *
+ *    (parent).is--anchor
+ *      (whatever)
+ *      .counter
+ *
+ */
+
+
+$counter-default-color: $lms-color-danger;
+$counter-colors: (
+  danger: $lms-color-danger,
+  warning: $lms-color-warning,
+  primary: $lms-color-primary,
+  dark: $lms-color-dark,
+);
+
+
+.counter {
+  position: absolute;
+  z-index: 2;
+  top: -10px;
+  right: -10px;
+  min-width: 20px;
+  height: 20px;
+
+  font-size: 12px;
+  line-height: 20px;
+
+  color: white;
+  text-align: center;
+
+  border-radius: 20px;
+  background: $counter-default-color;
+
+  @each $name, $color in $counter-colors {
+    &--#{$name} {
+      background: $color;
+    }
+  }
+}

@@ -1,0 +1,24 @@
+/**
+ *  CUSTOM_SELECT_OPTION component
+ *
+ *  styling for a custom select option
+ *
+ *    .custom-select-option
+ *      &__title
+ *      &__info
+ */
+
+
+.custom-select-option {
+  display: block;
+
+  &__title {
+    font-size: 16px;
+    @extend %ellipsis;
+  }
+
+  &__info {
+    @extend %ellipsis;
+  }
+
+}

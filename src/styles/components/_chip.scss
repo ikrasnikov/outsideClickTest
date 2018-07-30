@@ -1,0 +1,62 @@
+/**
+ *  CHIP component
+ *
+ *  styling for chips, like in selected filters, email recipients, tags, etc.
+ *
+ *    .chip
+ *      &__text
+ *
+ *  how to use
+ *  ----------
+ *  combine with layout-inline for spacing between the text and "remove" icon
+ *
+ *    .chip
+ *      .layout-inline.layout-inline--0px
+ *        .layout-inline__item.layout-inline__item--expand
+ *          .chip__text
+ *            (text)
+ *        .layout-inline__item
+ *          (remove button)
+ *
+ */
+
+
+$chip-themes: dark warning danger success primary;
+$chip-theme-colors: (
+  dark: white,
+  warning: white,
+  danger: white,
+  success: white,
+  primary: white
+);
+$chip-theme-backgrounds: (
+  dark: $lms-color-dark,
+  warning: $lms-color-warning,
+  danger: $lms-color-danger,
+  success: $lms-color-success,
+  primary: $lms-color-primary
+);
+
+
+.chip {
+  display: block;
+  max-width: 230px;
+  line-height: 24px;
+  background: rgba($lms-color-dark, 0.1);
+  border-radius: 32px;
+
+  &__text {
+    display: block;
+    padding: 0 12px;
+    width: 100%;
+    @extend %ellipsis;
+    white-space: nowrap;
+  }
+
+  @each $theme in $chip-themes {
+    &--#{$theme} {
+      background: map-get($chip-theme-backgrounds, $theme);
+      color: map-get($chip-theme-colors, $theme);
+    }
+  }
+}

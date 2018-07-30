@@ -1,11 +1,12 @@
-import { browser, element, by } from 'protractor';
+import { browser, by, element } from 'protractor';
+import { promise as wdpromise } from 'selenium-webdriver';
 
-export class OusideClickTestPage {
-  navigateTo() {
+export class AppPage {
+  public navigateTo(): wdpromise.Promise<{}> {
     return browser.get('/');
   }
 
-  getParagraphText() {
+  public getParagraphText(): wdpromise.Promise<string> {
     return element(by.css('app-root h1')).getText();
   }
 }

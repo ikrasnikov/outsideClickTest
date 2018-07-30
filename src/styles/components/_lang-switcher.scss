@@ -1,0 +1,17 @@
+.lang-switcher {
+  display: block;
+}
+
+
+.lang-switcher-toggle {
+  @extend %layout-inline;
+  color: $lms-color-dark;
+
+  &__language {
+    // ...
+  }
+
+  &__icon {
+    margin-left: 6px;
+  }
+}

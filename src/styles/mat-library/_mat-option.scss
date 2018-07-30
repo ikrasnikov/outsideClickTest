@@ -1,0 +1,34 @@
+.mat-option {
+  min-height: 48px;
+  height: auto !important;
+  line-height: inherit !important;
+  padding: 10px 16px !important;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  &.mat-option-disabled {
+    color: rgba($lms-color-dark, 0.35) !important;
+    cursor: not-allowed !important;
+  }
+}
+
+
+.mat-option:not(.mat-option-disabled) {
+  color: rgba($lms-color-dark, 0.75) !important;
+
+  &:hover,
+  &.mat-active {
+    background: rgba($lms-color-dark, 0.05) !important;
+  }
+
+  &.mat-selected {
+    color: $lms-color-dark !important;
+    background: rgba($lms-color-dark, 0.12) !important;
+  }
+
+  & .mat-ripple-element {
+    background: rgba($lms-color-dark, 0.2);
+  }
+}

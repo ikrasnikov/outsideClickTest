@@ -1,0 +1,49 @@
+/**
+ *  AUTOCOMPLETE SELECTION component
+ *
+ *  styling for list of items selected with autocomplete widget
+ *
+ *    .autocomplete-selection
+ *      &--multiple
+ *
+ *    .autocomplete-selection-item
+ *      &__title
+ *      &--active
+ *      &--static
+ *
+ */
+
+
+.autocomplete-selection {
+  display: block;
+}
+
+  .dialog .autocomplete-selection--multiple {
+    height: 197px; // a prime number so that it never equals to the theight of a few stacked entities
+    overflow: auto;
+    border: 1px solid rgba($lms-color-dark, 0.1);
+  }
+
+
+.autocomplete-selection-item {
+  display: block;
+  padding: 16px;
+
+  &--small {
+    padding: 0 0 12px 0;
+  }
+
+  &:not(.autocomplete-selection-item--static):hover {
+    background: rgba($lms-color-primary, 0.1);
+  }
+
+  &__title {
+    font-size: 16px;
+    line-height: 24px;
+    @extend %ellipsis;
+  }
+
+  &--active {
+    background: rgba($lms-color-primary, 0.1);
+  }
+}

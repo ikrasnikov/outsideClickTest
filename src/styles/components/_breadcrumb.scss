@@ -1,0 +1,20 @@
+/**
+ *  BREADCRUMB component
+ *
+ *  styling for breadcrumb items
+ *
+ */
+
+
+.breadcrumb {
+  @extend %layout-inline;
+
+  &:not(:last-child) {
+    &:after {
+      content: '/';
+      display: block;
+      margin-left: 6px;
+      color: rgba($lms-color-dark, 0.5);
+    }
+  }
+}

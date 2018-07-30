@@ -1,0 +1,12 @@
+.reports-graphs-page {
+  display: block;
+  width: 100%;
+}
+
+
+.reports-graphs-page-info-cards {
+  @extend %layout-inline;
+  align-items: stretch;
+  width: 100%;
+  margin-bottom: 24px;
+}

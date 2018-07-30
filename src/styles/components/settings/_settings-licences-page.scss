@@ -1,0 +1,76 @@
+%field {
+  @extend %layout-list;
+  align-items: flex-start;
+}
+
+
+.settings-licences-page {
+  display: block;
+  width: 100%;
+}
+
+.settings-licences-page-container {
+  display: flex;
+  width: 100%;
+
+  &__item {
+    margin: 12px;
+    flex-basis: 50%;
+  }
+}
+
+
+.settings-licences-page-title {
+  @extend %layout-split;
+  font-size: 24px;
+  opacity: 0.87;
+}
+
+
+.settings-licences-page-row {
+  @extend %layout-inline;
+  justify-content: center;
+  flex: 1;
+  border-bottom: 1px solid rgba($lms-color-dark, .1);
+  min-height: 58px;
+
+  &:last-of-type {
+    border: none;
+  }
+}
+
+
+.settings-licences-page-column-total {
+  @extend %field;
+  flex: 1;
+}
+
+
+.settings-licences-page-column-name {
+  @extend %field;
+  flex: 1;
+}
+
+
+.settings-licences-page-column-total-courses {
+  @extend %field;
+  flex-basis: 80px;
+}
+
+
+.settings-licences-page-column-in-use {
+  @extend %field;
+  flex-basis: 80px;
+}
+
+
+.settings-licences-page-column-available {
+  @extend %field;
+  flex-basis: 80px;
+}
+
+
+.settings-licences-page-courses {
+  flex-basis: 100%;
+  margin: 12px;
+}

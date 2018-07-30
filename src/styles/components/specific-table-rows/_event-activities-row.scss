@@ -1,0 +1,27 @@
+
+/**
+ *  EVENT ACTIVITIES ROW component
+ *
+ *  styling for event event activities table cells
+ *
+ *    .event-activities-row-cell-user
+ *    .event-activities-row-cell-status
+ *
+ *  how to use
+ *  ----------
+ *  use together with .layout-inline
+ *
+ *    .layout-inline
+ *      .layout-inline__cell.event-activities-row-cell-user
+ *      .layout-inline__cell.event-activities-row-cell-status
+ *
+ */
+
+
+.event-activities-row-cell-time {
+  width: 100px;
+}
+
+.event-activities-row-cell-title {
+  width: 160px;
+}

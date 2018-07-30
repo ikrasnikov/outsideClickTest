@@ -1,0 +1,32 @@
+/**
+ *  INPUT SPACER component
+ *
+ *  styling for characters you want to place between several
+ *  inline inputs, e.g. a "," between euro and cents
+ *  in the price-control component
+ *
+ *    .input-spacer
+ *
+ *  how to use
+ *  ==========
+ *  use .layout-inline and position the .input-spacer between
+ *  the two inputs as such:
+ *
+ *    .layout-inline.layout-inline--0px
+ *      .layout-inline__item(add appropriate width)
+ *        (mat-form-field-1)
+ *      .layout-inline__item
+ *        .input-spacer
+ *          (your spacer here)
+ *      .layout-inline__item(add appropriate width)
+ *        (mat-form-field-2)
+ *
+ */
+
+
+.input-spacer {
+  display: block;
+  padding: 0 4px;
+  font-size: 16px;
+  line-height: 24px;
+}

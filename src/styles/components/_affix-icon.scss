@@ -1,0 +1,27 @@
+/**
+ *  AFFIX ICON component
+ *
+ *  styling for icon in mat-button
+ *
+ *    .affix-icon
+ *      &__item
+ *
+ *  how to use
+ *  ==========
+ *
+ *    .affix-icon
+ *      .affix-icon__item
+ *
+ *      .affix-icon__item
+ *
+ */
+
+
+.affix-icon {
+  @extend %layout-inline;
+  margin-left: -10px;
+
+  &__item {
+    margin-left: 10px;
+  }
+}

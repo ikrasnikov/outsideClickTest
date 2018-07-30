@@ -1,0 +1,70 @@
+/**
+ *  FILTERS PANEL component
+ *
+ *  styling for filter panel and sections
+ *
+ *    .filters-panel
+ *      &__title
+ *
+ *    .filters-panel-section
+ *      &__title
+ *      &--bordered
+ *
+ *  how to use
+ *  ==========
+ *  intended for use inside .layout-offscreen as a side-panel
+ *  use with .layout-list
+ *
+ *    ...
+ *    .layout-offscreen__side.filters-panel
+ *      .layout-list
+ *        .layout-list__item
+ *          .filters-panel__title
+ *        .layout-list__item
+ *          .filters-panel-section
+ *            .filters-panel__title
+ *            ...
+ *        .layout-list__item
+ *          .filters-panel-section
+ *            .filters-panel__title
+ *            ...
+ *
+ */
+
+
+$lms-filters-panel-width: 300px;
+
+
+.filters-panel {
+  width: $lms-filters-panel-width;
+  padding: 24px 24px 24px 16px;
+  margin-right: -$lms-filters-panel-width; // requirement of the .layout-offscreen
+  background: white;
+  box-shadow: 0 9px 18px 0 rgba($lms-color-dark, 0.18),
+              0 5px 5px 0 rgba($lms-color-dark, 0.24);
+
+  &__title {
+    font-size: 20px;
+    line-height: 24px;
+    @extend %ellipsis;
+  }
+}
+
+
+.filters-panel-section {
+  &__title {
+    @extend %ellipsis;
+    color: rgba($lms-color-dark, 0.5);
+    margin-bottom: 16px;
+    font-weight: 500;
+  }
+
+  &__map {
+    height: 150px;
+    background-color: rgba($lms-color-dark, 0.1);
+  }
+
+  &--bordered {
+    border-bottom: 1px solid rgba($lms-color-dark, 0.1);
+  }
+}

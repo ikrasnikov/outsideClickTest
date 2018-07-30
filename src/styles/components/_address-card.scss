@@ -1,0 +1,34 @@
+/**
+ *  ADDRESS CARD component
+ *
+ *  styling for a address card
+ *
+ *    .address-card
+ *      &__map
+ *      &__title
+ *
+ *  how to use
+ *  ==========
+ *  use for width of map
+ *
+ *    .address-card
+ *      .address-card__map
+ *        (map)
+ *      .address-card__title
+ *        (title)
+ */
+
+
+.address-card {
+  @extend %card;
+  background: white;
+
+  &__map {
+    width: 150px;
+    height: 150px;
+  }
+
+  &__title {
+    font-weight: 600;
+  }
+}

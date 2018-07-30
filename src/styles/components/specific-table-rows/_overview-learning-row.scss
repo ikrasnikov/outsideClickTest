@@ -1,0 +1,50 @@
+/**
+ *  OVERVIEW LEARNING ROW component
+ *
+ *  styling for overview-learning table cells
+ *
+ *    .overview-learning-row-cell-progress
+ *    .overview-learning-row-cell-content
+ *    .overview-learning-row-cell-time-spent
+ *    .overview-learning-row-cell-deadline
+ *    .overview-learning-row-cell-start-end-date
+ *    .overview-learning-row-cell-status
+ *
+ *  how to use
+ *  ----------
+ *  use together with .layout-inline
+ *
+ *    .layout-inline
+ *      .layout-inline__cell.overview-learning-row-cell-progress
+ *      .layout-inline__cell.overview-learning-row-cell-content
+ *      .layout-inline__cell.overview-learning-row-cell-time-spent
+ *      .layout-inline__cell.overview-learning-row-cell-deadline
+ *      .layout-inline__cell.overview-learning-row-cell-start-end-date
+ *      .layout-inline__cell.overview-learning-row-cell-status
+ *
+ */
+
+
+.overview-learning-row-cell-progress {
+  width: 100px;
+}
+
+.overview-learning-row-cell-content {
+  width: 100px;
+}
+
+.overview-learning-row-cell-time-spent {
+  width: 120px;
+}
+
+.overview-learning-row-cell-deadline {
+  width: 120px;
+}
+
+.overview-learning-row-cell-start-end-date {
+  width: 120px;
+}
+
+.overview-learning-row-cell-status {
+  width: 120px;
+}

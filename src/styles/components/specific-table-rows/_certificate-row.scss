@@ -1,0 +1,32 @@
+/**
+ *  CERTIFICATE ROW component
+ *
+ *  styling for certificate table cells
+ *
+ *    .certificate-row-cell-type
+ *    .certificate-row-cell-expiration
+ *    .certificate-row-cell-updated
+ *
+ *  how to use
+ *  ----------
+ *  use together with .layout-inline
+ *
+ *    .layout-inline
+ *      .layout-inline__item.certificate-row-cell-type
+ *      .layout-inline__item.certificate-row-cell-expiration
+ *      .layout-inline__item.certificate-row-cell-updated
+ *
+ */
+
+
+.certificate-row-cell-type {
+  width: 140px;
+}
+
+.certificate-row-cell-expiration {
+  width: 140px;
+}
+
+.certificate-row-cell-updated {
+  width: 140px;
+}

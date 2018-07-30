@@ -1,0 +1,9 @@
+%appbar {
+  display: block;
+  position: relative;
+  z-index: 3;
+  height: $lms-header-height;
+  padding: 0 24px;
+  background: white;
+  border-bottom: 1px solid rgba($lms-color-dark, 0.1);
+}

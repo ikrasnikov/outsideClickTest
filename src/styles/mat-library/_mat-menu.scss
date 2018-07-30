@@ -1,0 +1,61 @@
+.mat-menu-panel {
+  max-width: 370px !important;
+}
+
+
+$lms-mat-menu-item-alternative-themes: (
+  danger: $lms-color-danger
+);
+
+
+.mat-menu-item {
+  width: 100%;
+  display: flex !important;
+  align-items: center;
+
+  font-size: 14px;
+  line-height: 20px !important;
+  height: 42px !important;
+
+  &:not(:disabled) {
+    color: rgba($lms-color-dark, 0.75) !important;
+  }
+
+  & .mat-ripple-element {
+    background-color: rgba($lms-color-dark, 0.2) !important;
+  }
+
+  &[lms-bordered] {
+    border-top: 1px solid rgba($lms-color-dark, 0.2);
+  }
+}
+
+
+.mat-menu-item:hover:not(:disabled),
+.mat-menu-item:focus:not(:disabled),
+.mat-menu-item-highlighted:not(:disabled) {
+  background-color: rgba($lms-color-dark, 0.1) !important;
+}
+
+
+.mat-menu-item:disabled {
+  color: rgba($lms-color-dark, 0.3) !important;
+  cursor: not-allowed !important;
+}
+
+
+@each $theme, $color in $lms-mat-menu-item-alternative-themes {
+  .mat-menu-item[lms-theme="#{$theme}"]:not(:disabled) {
+    color: rgba($color, 0.75) !important;
+
+    & .mat-ripple-element {
+      background-color: rgba($color, 0.2) !important;
+    }
+  }
+
+  .mat-menu-item[lms-theme="#{$theme}"]:hover:not(:disabled),
+  .mat-menu-item[lms-theme="#{$theme}"]:focus:not(:disabled),
+  .mat-menu-item-highlighted[lms-theme="#{$theme}"]:not(:disabled) {
+    background-color: rgba($color, 0.1) !important;
+  }
+}

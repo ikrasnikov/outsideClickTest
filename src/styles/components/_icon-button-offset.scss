@@ -1,0 +1,20 @@
+/**
+ *  ICON BUTTON OFFSET component
+ *
+ *  offset for mat-icon-button that compensates for the ripple size
+ *
+ *    .icon-button-offset
+ *
+ *  how to use
+ *  ==========
+ *  wrap mat-icon-button in a div with this class
+ *
+ *    .icon-button-offset
+ *      button.mat-icon-button
+ *
+ */
+
+
+.icon-button-offset {
+  margin: -6px;
+}

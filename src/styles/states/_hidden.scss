@@ -1,0 +1,12 @@
+/**
+ *  HIDDEN global state
+ *
+ *  hides the element from the DOM
+ *
+ *    .is--hidden
+ *
+ */
+
+.is--hidden {
+  display: none !important;
+}

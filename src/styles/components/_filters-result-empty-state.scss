@@ -1,0 +1,50 @@
+/**
+ *  FILTER EMPTY STATE RESULT component
+ *
+ *  styles for empty states (normal and small variation)
+ *
+ *    .filters-result-empty-state
+ *      &__icon
+ *      &__title
+ *      &__caption
+ *
+ *  how to use
+ *  ----------
+ *
+ *    .filters-result-empty-state
+ *      .filters-result-empty-state__icon
+ *      .filters-result-empty-state__caption
+ *      .filters-result-empty-state__title
+ *
+ */
+
+
+.filters-result-empty-state {
+  @extend %layout-center;
+  flex-direction: column;
+  width: 100%;
+
+  color: rgba($lms-color-dark, 0.5);
+  height: 272px;
+
+  &__icon {
+    margin-bottom: 20px;
+  }
+
+
+  &__title {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 32px;
+  }
+
+
+  &__caption {
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+  }
+}
+
+
+

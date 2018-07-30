@@ -1,0 +1,20 @@
+/**
+ *  DYNAMIC CONTENT TOOLTIP component
+ *
+ *  styling for .mat-tooltip-panel in component .dynamic-content-tooltip
+ *
+ *    .dynamic-content-tooltip
+ *
+ *  how to use
+ *  ==========
+ *
+ *    .dynamic-content-tooltip
+ *       .mat-tooltip-panel
+ */
+
+
+.dynamic-content-tooltip {
+  & .mat-tooltip-panel {
+    pointer-events: none !important;
+  }
+}

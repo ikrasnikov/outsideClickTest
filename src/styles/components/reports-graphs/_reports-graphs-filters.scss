@@ -1,0 +1,44 @@
+.reports-graphs-filters {
+  display: block;
+  margin-bottom: 24px;
+}
+
+
+.reports-graphs-filters-header {
+  @extend %layout-split;
+  margin-bottom: 30px;
+
+  &__title {
+    font-size: 20px;
+    opacity: 0.87;
+  }
+}
+
+
+.reports-graphs-filters-items {
+  @extend %layout-inline;
+}
+
+
+.reports-graphs-filters {
+  &__select-wrapper {
+    margin-right: 24px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &--lg {
+      flex-basis: 35%;
+    }
+
+    &--md {
+      flex-basis: 20%;
+    }
+
+    &--date-picker {
+      display: flex;
+      flex-basis: 45%;
+    }
+  }
+}

@@ -1,0 +1,9 @@
+.row .nw-toolbar {
+  // when rows are stacked they already have a border...
+  // probably need a better way to do this
+  border-top: none !important;
+}
+
+.dialog .nw-editor__res {
+  height: 250px !important;
+}

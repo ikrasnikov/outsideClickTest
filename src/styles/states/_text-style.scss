@@ -1,0 +1,21 @@
+/**
+ *  TEXT STYLE global state
+ *
+ *  governs text style
+ *
+ *    .is--italic
+ *
+ *  how to use
+ *  ==========
+ *  append to any class you want to modify
+ *
+ *    ...
+ *    .layout-list__item.is--italic
+ *      ...
+ *
+ */
+
+
+.is--italic {
+  font-style: italic !important;
+}

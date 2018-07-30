@@ -1,0 +1,24 @@
+$lms-mat-hint-default-theme: dark;
+$lms-mat-hint-alternative-themes: light warning;
+
+
+$lms-mat-hint-theme-colors: (
+  light: white,
+  dark: $lms-color-dark,
+  warning: $lms-color-warning,
+);
+
+
+.mat-hint {
+  flex: 1;
+
+  // default theme:
+  color: rgba(map-get($lms-mat-hint-theme-colors, $lms-mat-hint-default-theme), 0.5);
+}
+
+
+@each $theme-name in $lms-mat-hint-alternative-themes {
+  .mat-hint[lms-theme="#{$theme-name}"] {
+    color: rgba(map-get($lms-mat-hint-theme-colors, $theme-name), 0.5);
+  }
+}

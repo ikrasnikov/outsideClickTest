@@ -1,0 +1,108 @@
+.input-image {
+  position: relative;
+  display: block;
+
+  &__select-file, &__image-container {
+    height: 170px;
+    border-radius: 3px;
+
+    background: $grey-light;
+  }
+
+  &__select-file {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__icon {
+    color: rgba($dark-color, .5);
+    cursor: pointer;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__title {
+    font-size: 16px;
+    line-height: 24px;
+    color: rgba($dark-color, .5);
+  }
+
+  &__browse {
+    color: $link-color;
+    cursor: pointer;
+  }
+
+  &__description {
+    text-align: center;
+    font-size: 14px;
+    line-height: 20px;
+    max-width: 300px;
+    color: rgba($dark-color, .2);
+  }
+
+  &__image {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  &__image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+  }
+
+  &__shape {
+    width: 4px;
+    height: 4px;
+    margin: 1px;
+    background: rgba($link-color, .5);
+    border-radius: 50%;
+  }
+
+  &__image-settings {
+    position: absolute;
+    top: 10px;
+    right: 16px;
+    height: 20px;
+    width: 20px;
+    border-radius: 12px;
+    background: $grey-medium;
+    padding: 2px;
+    cursor: pointer;
+    z-index: 10;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__select {
+    visibility: hidden;
+    width: 170px;
+    position: absolute;
+    top: 20px;
+    right: 0;
+  }
+
+  &__image-upload {
+    padding-right: 10px;
+  }
+
+  &__option {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+}

@@ -1,0 +1,119 @@
+/**
+ *  SKELETON component
+ *
+ *  styles for skeletons
+ *
+ *  width options:
+ *  90per 80per 70per 60per 50per 40per 25per
+ *  300px 100px 200px 90px 80px 70px 60px 50px 24px
+ *
+ *    .skeleton-learning-image
+ *    .skeleton-checkbox
+ *    .skeleton-avatar
+ *    .skeleton-thumbnail
+ *    .skeleton-image
+ *    .skeleton-action
+ *    .skeleton-%WIDTH%
+ *    .skeleton-title-%WIDTH%
+ *
+ */
+
+
+.skeleton-learning-image {
+  display: block;
+  @include loader-placeholder(150px, 100%, 0, false);
+}
+
+
+.skeleton-checkbox {
+  padding: 4px;
+
+  &:before {
+    content: '';
+    display: block;
+    @include loader-placeholder(18px, 18px, 3px, false);
+  }
+}
+
+.skeleton-filter-checkbox {
+
+  &:before {
+    content: '';
+    display: block;
+    @include loader-placeholder(18px, 18px, 3px, false);
+  }
+}
+
+
+.skeleton-avatar {
+  &:before {
+    content: '';
+    display: block;
+    @include loader-placeholder(32px, 32px, 32px, false);
+  }
+}
+
+
+.skeleton-thumbnail {
+  &:before {
+    content: '';
+    display: block;
+    @include loader-placeholder(48px, 48px, 3px, false);
+  }
+}
+
+
+.skeleton-action {
+  &:before {
+    content: '';
+    display: block;
+    @include loader-placeholder(36px, 36px, 36px, false);
+  }
+}
+
+
+$skeleton-widths: (
+  90per: 90%,
+  80per: 80%,
+  70per: 70%,
+  60per: 60%,
+  50per: 50%,
+  40per: 40%,
+  25per: 25%,
+  300px: 300px,
+  200px: 200px,
+  100px: 100px,
+  90px: 90px,
+  80px: 80px,
+  70px: 70px,
+  60px: 60px,
+  50px: 50px,
+  24px: 24px
+);
+
+
+@each $name, $width in $skeleton-widths {
+  .skeleton-#{$name} {
+    padding: 3px;
+    width: 100%;
+    height: 20px;
+
+    &:before {
+      content: '';
+      display: block;
+      @include loader-placeholder(#{$width}, 12px, 6px, false);
+    }
+  }
+
+  .skeleton-title-#{$name} {
+    padding: 3px;
+    width: 100%;
+    height: 24px;
+
+    &:before {
+      content: '';
+      display: block;
+      @include loader-placeholder(#{$width}, 18px, 6px, false);
+    }
+  }
+}

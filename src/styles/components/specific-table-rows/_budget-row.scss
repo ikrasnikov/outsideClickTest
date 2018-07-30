@@ -1,0 +1,31 @@
+/**
+ *  BUDGET ROW component
+ *
+ *  styling for budget table cells
+ *
+ *    .budget-row-cell-expiration-date
+ *    .budget-row-cell-available
+ *    .budget-row-cell-approval-flow
+ *
+ *  how to use
+ *  ----------
+ *  use together with .layout-inline
+ *
+ *    .layout-inline
+ *      .layout-inline__cell.budget-row-cell-expiration-date
+ *      .layout-inline__cell.budget-row-cell-available
+ *      .layout-inline__cell.budget-row-cell-approval-flow
+ *
+ */
+
+.budget-row-cell-expiration-date {
+  width: 150px;
+}
+
+.budget-row-cell-available {
+  width: 150px;
+}
+
+.budget-row-cell-approval-flow {
+  width: 150px;
+}

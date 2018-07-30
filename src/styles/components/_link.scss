@@ -1,0 +1,22 @@
+/**
+ *  LINK component
+ *
+ *  styling for links
+ *
+ *    .lms-link
+ *
+ */
+
+
+.lms-link {
+  display: inline;
+  font-size: inherit;
+  line-height: inherit;
+
+  text-decoration: underline;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: none;
+  }
+}

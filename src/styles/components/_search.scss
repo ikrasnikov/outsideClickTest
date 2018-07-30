@@ -1,0 +1,17 @@
+.search {
+  display: flex;
+  align-items: center;
+  color: $text-color;
+
+  &__form {
+    width: 0;
+    transition: width .35s;
+    margin-left: 10px;
+    color: rgba($dark-base-color, 0.30);
+    font-size: 16px;
+
+    &--opened {
+      width: 328px;
+    }
+  }
+}

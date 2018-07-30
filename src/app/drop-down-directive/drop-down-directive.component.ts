@@ -3,11 +3,10 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-drop-down-directive',
   templateUrl: './drop-down-directive.component.html',
-  styleUrls: ['./drop-down-directive.component.css']
 })
 export class DropDownDirectiveComponent {
 
-  public isShown = false;
+  public isShown: boolean = false;
 
 
   public toggleContent(): void {

@@ -1,0 +1,14 @@
+/**
+ *  CONTENT AREA component
+ *
+ *  styling for the HTML content that gets
+ *  loaded via js
+ *
+ *    .content-area
+ *
+ */
+
+
+.content-area {
+  @extend %content-area;
+}

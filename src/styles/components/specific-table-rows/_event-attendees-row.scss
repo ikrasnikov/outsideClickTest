@@ -1,0 +1,27 @@
+
+/**
+ *  EVENT ATTENDEES ROW component
+ *
+ *  styling for event event attendees table cells
+ *
+ *    .event-attendees-row-cell-user
+ *    .event-attendees-row-cell-status
+ *
+ *  how to use
+ *  ----------
+ *  use together with .layout-inline
+ *
+ *    .layout-inline
+ *      .layout-inline__cell.event-attendees-row-cell-user
+ *      .layout-inline__cell.event-attendees-row-cell-status
+ *
+ */
+
+
+.event-attendees-row-cell-user {
+  width: 260px;
+}
+
+.event-attendees-row-cell-status {
+  width: 220px;
+}

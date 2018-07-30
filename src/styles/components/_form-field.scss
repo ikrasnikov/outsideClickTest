@@ -1,0 +1,70 @@
+/**
+ *  FORM FIELD component
+ *
+ *  styling for form fields
+ *
+ *    .form-field
+ *      &__label
+ *        &--required
+ *      &__value
+ *      &--static
+ *
+ *  how to use
+ *  ==========
+ *  inline forms use the layout-inline with its unique
+ *  shortcut with the 40/60 column ratio
+ *
+ *    .form-field
+ *      .layout-inline-form-field
+ *        .layout-inline__item.layout-inline__item--40per
+ *          .form-field__label(.form-field__label--required)
+ *        .layout-inline__item.layout-inline__item--60per
+ *          (mat-form-field/whatever-control)
+ *
+ *    For readonly values:
+ *    .form-field.form-field--static
+ *      .layout-inline-form-field
+ *        .layout-inline__item.layout-inline__item--40per
+ *          .form-field__label(.form-field__label--required)
+ *        .layout-inline__item.layout-inline__item--60per
+ *          .form-field__value
+ *
+ */
+
+%form-field-text {
+  font-size: 16px;
+  line-height: 24px;
+  word-break: break-all;
+}
+
+.form-field {
+  display: block;
+  width: 100%;
+  padding: 24px;
+
+  &--dark {
+    background-color: rgba($lms-color-dark, 0.1);
+  }
+
+  &:not(.form-field--static):hover {
+    background-color: $lms-color-hover;
+  }
+
+  &__label {
+    @extend %layout-inline;
+    @extend %form-field-text;
+
+    &--required {
+      &:after {
+        content: '*';
+        display: block;
+        margin-left: 3px;
+        color: $lms-color-primary;
+      }
+    }
+  }
+
+  &__value {
+    @extend %form-field-text;
+  }
+}

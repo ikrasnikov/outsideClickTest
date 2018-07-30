@@ -1,0 +1,51 @@
+.row-field {
+  line-height: 18px;
+
+  &--muted {
+    opacity: 0.5;
+  }
+
+  &--interactive {
+    cursor: pointer;
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  &--header {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    color: rgba($lms-color-dark, 0.5);
+  }
+
+  &--error {
+    color: $lms-color-danger;
+  }
+
+  &--success {
+    color: $lms-color-success;
+  }
+
+  &--warning {
+    color: $lms-color-warning;
+  }
+
+  &--light {
+    color: white;
+  }
+
+  &--primary {
+    color: $lms-color-primary;
+  }
+
+  &--required {
+    &:after {
+      content: '*';
+      display: inline-block;
+      color: $lms-color-primary;
+    }
+  }
+}

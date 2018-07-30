@@ -1,0 +1,30 @@
+/**
+ *  PUSH global state
+ *
+ *  allow overwrite parent's paddings/margins on layouts
+ *
+ *    .is--push-%SIZE%
+ *
+ *  how to use
+ *  ==========
+ *  add to .layout-list__item or .layout-inline__item
+ *  where you want to overwrite its parent's padding settings
+ *
+ *    .layout-inline.layout-inline--10px
+ *      .layout-inline__item
+ *      .layout-inline__item
+ *      .layout-inline__item.is--push-24px  <-- has padding-left 24px instead of 10px
+ *      .layout-inline__item
+ *
+ */
+
+@each $size in $lms-layout-spacing-options {
+  .layout-inline__item:not(:first-child).is--push-#{$size} {
+    padding-left: $size !important;
+  }
+
+  .layout-list__item:not(:last-child).is--push-#{$size} {
+    padding-bottom: $size !important;
+  }
+}
+

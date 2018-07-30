@@ -1,0 +1,88 @@
+/**
+ *  CARD component
+ *
+ *  styling for a card
+ *
+ *    .card
+ *      &__body
+ *        &--24px
+ *        &--collapse-vertical
+ *      &__delimiter
+ *      &--interactive
+ *
+ *  how to use
+ *  ==========
+ *  card is very similar to a .row and a .note components
+ *
+ *  a .note component is a very specific type of a card with
+ *  a title and some text
+ *
+ *  a .row component is used with other .row components to form
+ *  a group with common rounded borders, shadows, and border in
+ *  between the rows
+ *
+ *  the .card component is used in all other cases
+ *  .card__delimiter is a "border" that can be placed in between bodies
+ *  the delimiter has same padding from left and right as the body
+ *
+ *    .card
+ *      .card__body
+ *        (card content)
+ *      .card__delimiter
+ *      .card__body
+ *        (some other content)
+ *
+ */
+
+
+.card {
+  @extend %card;
+  position: relative;
+  background: white;
+
+  &__body {
+    display: block;
+    padding: 16px;
+
+    &--24px {
+      padding: 24px;
+    }
+
+    &--collapse-vertical {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+
+  &--interactive {
+    &:hover {
+      background-color: $lms-color-hover;
+    }
+  }
+
+  &__delimiter {
+    display: block;
+    height: 1px;
+    margin: 0 16px;
+    background: rgba($lms-color-dark, 0.1);
+
+    &--full {
+      margin: 0;
+    }
+  }
+}
+
+
+.card-interactions {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background: $lms-color-hover;
+  padding: 8px 16px;
+
+  .card:hover > & {
+    display: block;
+  }
+}

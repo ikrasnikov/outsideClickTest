@@ -1,0 +1,76 @@
+/**
+ *  NOTE component
+ *
+ *  styles for warning/success/info messages
+ *  used in dialogs (for notes), on invite users page (error message)
+ *
+ *    .note
+ *      &__title
+ *      &__text
+ *
+ *  how to use
+ *  ----------
+ *
+ *    .note(.note--%THEME%)
+ *      .note__title
+ *      .note__text
+ *
+ **/
+
+
+$lms-note-default-theme: light;
+$lms-note-additional-themes: dark primary warning success danger success-20per warning-20per;
+
+$lms-note-theme-bgs: (
+  light: white,
+  dark: $lms-color-dark,
+  primary: $lms-color-primary,
+  warning: $lms-color-warning,
+  success: $lms-color-success,
+  danger: $lms-color-danger,
+  success-20per: linear-gradient(rgba($lms-color-success, 0.2), rgba($lms-color-success, 0.2)) white,
+  warning-20per: linear-gradient(rgba($lms-color-warning, 0.2), rgba($lms-color-warning, 0.2)) white
+);
+
+$lms-note-theme-colors: (
+  light: $lms-color-dark,
+  dark: white,
+  primary: white,
+  warning: white,
+  danger: white,
+  success: white,
+  success-20per: $lms-color-dark,
+  warning-20per: $lms-color-dark
+);
+
+
+.note {
+  @extend %card;
+  display: block;
+  padding: 16px;
+  background: map-get($lms-note-theme-bgs, $lms-note-default-theme);
+
+  &__title {
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: map-get($lms-note-theme-colors, $lms-note-default-theme);
+  }
+
+  &__text {
+    color: rgba(map-get($lms-note-theme-colors, $lms-note-default-theme), 0.5);
+  }
+
+  @each $theme in $lms-note-additional-themes {
+    &--#{$theme} {
+      background: map-get($lms-note-theme-bgs, $theme);
+
+      & .note__title {
+        color: map-get($lms-note-theme-colors, $theme);
+      }
+
+      & .note__text {
+        color: map-get($lms-note-theme-colors, $theme);
+      }
+    }
+  }
+}

@@ -1,0 +1,75 @@
+/**
+ *  LEARNING INFO component
+ *
+ *  general styling for 'info' components for learning item cards
+ *
+ *    .learning-info
+ *      &__title
+ *      &__detail
+ *      &__price
+ *      &__info
+ *      &__status-list
+ *
+ *  how to use
+ *  ==========
+ *  combine with .card, .thumbnail components, and layout-inline
+ *
+ *    .card
+ *      .learning-info
+ *        .layout-inline-learning-info
+ *          .layout-inline__item
+ *            .thumbnail.thumbnail--info(.thumbnail-info--empty)
+ *          .layout-inline__item.layout-inline__item--expand
+ *            .card__body
+ *              (info body here)
+ *
+ *  use the .learning-info__detail with the .layout-inline--10px
+ *  for lists of learning's properties
+ *
+ *    ...
+ *    .layout-inline--10px
+ *      .layout-inline__item[*ngFor=...].learning-info__detail
+ *        (property here)
+ *
+ */
+
+
+.learning-info {
+  display: block;
+
+  &__title {
+    font-size: 18px;
+    line-height: 24px;
+    @extend %ellipsis;
+
+    &:not(:last-child) {
+      margin-bottom: 6px;
+    }
+  }
+
+  &__detail {
+    color: rgba($lms-color-dark, 0.5);
+
+    &:not(:last-child):after {
+      content: '|';
+      margin-left: 10px;
+      color: rgba($lms-color-dark, 0.2);
+    }
+  }
+
+  &__price {
+    font-size: 18px;
+  }
+
+  &__info {
+    line-height: 16px;
+  }
+
+  &__status-list {
+    // since chips are at least 24px and the text has 20px line-height,
+    // we need to compensate for this space difference
+    margin-top: -2px;
+    margin-bottom: -2px;
+    margin-right: -2px;
+  }
+}

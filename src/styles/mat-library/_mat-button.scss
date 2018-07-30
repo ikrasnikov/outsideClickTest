@@ -1,0 +1,79 @@
+$lms-button-default-theme: dark;
+$lms-button-alternative-themes: light primary primary-light danger success;
+
+$lms-button-theme-colors: (
+  dark: rgba($lms-color-dark, 0.5),
+  light: rgba(white, 0.8),
+  primary: $lms-color-primary,
+  primary-light: $lms-color-primary,
+  danger: $lms-color-danger,
+  success: $lms-color-success
+);
+
+$lms-button-theme-backgrounds: (
+  dark: transparent,
+  light: transparent,
+  primary: transparent,
+  primary-light: rgba($lms-color-primary, 0.1),
+  danger: transparent,
+  success: transparent
+);
+
+$lms-button-theme-overlays: (
+  dark: rgba($lms-color-dark, 0.5),
+  light: white,
+  primary: $lms-color-primary,
+  primary-light: rgba($lms-color-primary, 0.1),
+  danger: $lms-color-danger,
+  success: $lms-color-success
+);
+
+
+.mat-button {
+  display: block !important;
+  height: 36px;
+
+  text-transform: uppercase;
+
+  & > .mat-button-wrapper {
+    @extend %layout-inline;
+    justify-content: center !important;
+  }
+
+  // default theme
+  &:not(:disabled) {
+    color: map-get($lms-button-theme-colors, $lms-button-default-theme) !important;
+  }
+
+  &:disabled {
+    color: rgba(map-get($lms-button-theme-colors, $lms-button-default-theme), 0.4) !important;
+  }
+
+  &:not(:disabled) > .mat-button-focus-overlay {
+    background-color: rgba(map-get($lms-button-theme-overlays, $lms-button-default-theme), 0.12) !important;
+  }
+
+  &:not(:disabled) .mat-ripple-element {
+    background-color: rgba(map-get($lms-button-theme-overlays, $lms-button-default-theme), 0.2) !important;
+  }
+}
+  @each $theme-name in $lms-button-alternative-themes {
+    .mat-button[lms-theme="#{$theme-name}"] {
+      &:not(:disabled) {
+        color: map-get($lms-button-theme-colors, $theme-name) !important;
+        background-color: map-get($lms-button-theme-backgrounds, $theme-name) !important;
+      }
+
+      &:disabled {
+        color: rgba(map-get($lms-button-theme-colors, $theme-name), 0.4) !important;
+      }
+
+      &:not(:disabled) > .mat-button-focus-overlay {
+        background-color: rgba(map-get($lms-button-theme-overlays, $theme-name), 0.12) !important;
+      }
+
+      &:not(:disabled) .mat-ripple-element {
+        background-color: rgba(map-get($lms-button-theme-overlays, $theme-name), 0.2) !important;
+      }
+    }
+  }

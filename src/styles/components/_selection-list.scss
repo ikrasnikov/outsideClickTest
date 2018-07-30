@@ -1,0 +1,24 @@
+/**
+ *  SELECTION LIST component
+ *
+ *  styling for the menu with the list of selected entities
+ *  e.g., list of selected users, teams, etc.
+ *
+ *    .selection-list
+ *      &__title
+ *
+ */
+
+
+.selection-list {
+  width: 354px;
+
+  &__title {
+    font-size: 12px;
+    line-height: 16px;
+    color: rgba($lms-color-dark, 0.5);
+    padding: 16px;
+    white-space: nowrap;
+    @extend %ellipsis;
+  }
+}

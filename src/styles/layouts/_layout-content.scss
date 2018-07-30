@@ -1,0 +1,45 @@
+/**
+ *  CONTENT layout
+ *
+ *  positioning and size for rows, cards,
+ *  expandable rows, form panels, etc.
+ *
+ *    .layout-content
+ *      &--narrow
+ *      &--wide
+ *      &--expanded
+ *
+ */
+
+
+.layout-content {
+  position: relative;
+  width: 100%;
+  padding: 0;
+  max-width: $lms-item-max-width;
+  margin-left: auto;
+  margin-right: auto;
+
+  transition: padding 0.2s;
+
+  &--narrow {
+    max-width: $lms-item-narrow-max-width;
+  }
+
+  &--wide {
+    max-width: $lms-item-wide-max-width;
+  }
+
+  &--expanded {
+    padding: 24px 0;
+    max-width: $lms-expanded-item-max-width;
+
+    &.layout-content--narrow {
+      max-width: $lms-expanded-item-narrow-max-width;
+    }
+
+    &.layout-content--wide {
+      max-width: $lms-item-wide-max-width;
+    }
+  }
+}

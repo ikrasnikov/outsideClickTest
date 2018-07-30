@@ -1,0 +1,32 @@
+/**
+ *  CATEGORY ROW component
+ *
+ *  styling for category table cells
+ *
+ *    .category-row-cell-order
+ *    .category-row-cell-categories
+ *    .category-row-cell-learning
+ *
+ *  how to use
+ *  ----------
+ *  use together with .layout-inline
+ *
+ *    .layout-inline
+ *      .layout-inline__cell.category-row-cell-order
+ *      .layout-inline__cell.category-row-cell-categories
+ *      .layout-inline__cell.category-row-cell-learning
+ *
+ */
+
+
+.category-row-cell-order {
+  width: 50px;
+}
+
+.category-row-cell-categories {
+  width: 100px;
+}
+
+.category-row-cell-learning {
+  width: 100px;
+}
